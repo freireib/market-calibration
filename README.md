@@ -3,8 +3,7 @@
 **Analyzing the accuracy, calibration, and predictive performance of prediction markets.**
 
 A lightweight, provider-neutral browser dashboard for historical probability forecasts.
-The first research study is **2026 US midterm elections**, beginning with Kalshi quote
-snapshots. The app is designed in the spirit of
+The initial studies cover the **2026 US general election** and **2026 primary nominations**, beginning with Kalshi's historical prices. The app is designed in the spirit of
 [CalibrationLab](https://github.com/freireib/calibration-lab): plain HTML, CSS and
 JavaScript, mobile friendly, transparent statistics and portable data.
 
@@ -16,6 +15,14 @@ JavaScript, mobile friendly, transparent statistics and portable data.
 - ✅ Data collection available under **Actions → Collect 2026 election market data → Run workflow**. Select pilot or all. The workflow writes the validated dataset back to `main`.
 - ⚠️ The current dataset is *not* a representative sample of every 2026 race. Kalshi does not offer a market for every race; the current discovery pass also misses some at-large districts. Missing forecasts are excluded.
 - ⏳ Integration of independent AP calls and other market providers remains future work.
+
+## 2026 primary study
+
+Choose **2026 Primaries** in the dashboard's Study menu. The data are collected from archived candidate YES contracts for 30 curated 2026 primary and runoff nomination events; the series/date catalog is at [`data/primary_events_2026.json`](data/primary_events_2026.json). Four date-relative snapshots are supported: 2 months, 1 month, 1 week, and 1 day before each contest.
+
+The primary reliability diagram is **binary candidate-contract calibration**, not a multicategory score of distinct primary elections. Candidate outcomes within an election are dependent, and contests with more candidate contracts contribute more records. See [`docs/primaries.md`](docs/primaries.md) for methods and sampling limitations.
+
+Run `python3 scripts/collect_primaries.py`, or use **Actions → Collect 2026 primary history → Run workflow** to refresh the public `data/primaries_2026.json` dataset.
 
 ## Run the app locally
 
