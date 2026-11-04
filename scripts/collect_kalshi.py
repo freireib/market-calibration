@@ -32,7 +32,7 @@ HORIZONS = {
     "one_month": datetime(2026, 10, 3, 15, tzinfo=EASTERN),
     "one_day": datetime(2026, 11, 2, 15, tzinfo=EASTERN),
 }
-ALLOWED_OUTCOME_STATUSES = {"called", "certified", "settled"}
+ALLOWED_OUTCOME_STATUSES = {"called", "certified", "settled", "resolved"}
 
 
 def api_get(path: str, params: dict | None = None) -> dict:
@@ -153,8 +153,8 @@ def settled_outcome(market: dict, ticker: str) -> dict:
     # Settlement is a market determination; it is not necessarily an AP call.
     status = str(market.get("status", "")).lower()
     result = str(market.get("result", "")).lower()
-    if status == "settled" and result in ("yes", "no"):
-        return {"outcome": int(result == "yes"), "outcome_status": "settled",
+    if status in ("settled", "finalized") and result in ("yes", "no"):
+        return {"outcome": int(result == "yes"), "outcome_status": "resolved",
                 "outcome_source": API + "/markets/" + quote(ticker, safe="")}
     return {"outcome": None, "outcome_status": "uncalled", "outcome_source": ""}
 
@@ -177,8 +177,14 @@ def collect() -> None:
         resolution = verified.get(entry["event_id"]) or settled_outcome(market, ticker)
         for horizon, dt in HORIZONS.items():
             cutoff = int(dt.timestamp())
-            candles = get_candles(series, ticker, cutoff-8*86400, cutoff)
-            measured = snapshot(candles, cutoff)
+            try:
+                candles = get_candles(series, ticker, cutoff-8*86400, cutoff)
+                measured = snapshot(candles, cutoff)
+            except RuntimeError as err:
+                print(f"  Missing {horizon}: {str(err)[:160]}", flush=True)
+                measured = {"probability": None, "volume_7d": None,
+                            "spread": None, "quote_age_hours": None,
+                            "quote_status": "unavailable"}
             record = {
                 "provider": entry["provider"], "event_id": entry["event_id"],
                 "label": entry["label"], "category": entry["category"],
@@ -218,6 +224,7 @@ def self_test():
     historic = [{"end_period_ts":now-3600, "yes_bid":{"close":"0.42"},
                 "yes_ask":{"close":"0.48"}, "volume":3}]
     assert abs(snapshot(historic,now)["probability"]-0.45)<1e-10
+    assert settled_outcome({"status":"finalized", "result":"yes"},"A")["outcome"] == 1
     print("Offline tests passed. Live API not tested.")
 
 
