@@ -34,7 +34,7 @@ function select(overrides={}) {
     ...overrides
   };
 }
-const ids = rows => rows.map(r=>r.event_id+'-'+r.horizon).sort();
+const ids = rows => Array.from(rows,r=>r.event_id+'-'+r.horizon).sort();
 test('maximum seven-day volume removes heavily traded contracts and absent-volume records',()=>{
   const ctx=engine();vm.runInContext('records = '+JSON.stringify(fixture()),ctx);
   const filtered=ctx.eligibleRows(select({maxVolume:2000}));
