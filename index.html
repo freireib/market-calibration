@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#132c37">
+  <meta name="description" content="A reproducible look at how accurately prediction markets forecast events.">
+  <title>Market Calibration</title>
+  <link rel="stylesheet" href="./style.css?v=1">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <span class="bullseye" aria-hidden="true"></span>
+      <div class="brand"><strong>Market Calibration</strong><small>Measuring the accuracy of market probabilities</small></div>
+      <span class="version">v0.1</span>
+    </header>
+    <nav class="tabs" aria-label="Pages">
+      <button class="tab active" data-view="calibration" aria-current="page">Calibration</button>
+      <button class="tab" data-view="markets">Markets</button>
+      <button class="tab" data-view="methods">Methods & data</button>
+    </nav>
+    <main>
+      <section class="view active" id="calibration" aria-label="Calibration analysis">
+        <p class="eyebrow">2026 US MIDTERMS · INITIAL STUDY</p>
+        <h1>Were the odds right?</h1>
+        <p class="intro">Compare forecasts taken at equal time horizons before Election Day. Resolved outcomes only; no election leads treated as winners.</p>
+        <div id="dataset-status" class="notice" role="status">Loading dataset…</div>
+        <div class="summary" id="summary"></div>
+        <div class="controls">
+          <fieldset><legend>Horizon</legend>
+            <label><input type="checkbox" name="horizon" value="two_months" checked> 2 months</label>
+            <label><input type="checkbox" name="horizon" value="one_month" checked> 1 month</label>
+            <label><input type="checkbox" name="horizon" value="one_day" checked> 1 day</label>
+          </fieldset>
+          <label class="field">Office
+            <select id="category">
+              <option value="all">All races</option><option value="House">House</option>
+              <option value="Senate">Senate</option><option value="Governor">Governor</option>
+            </select>
+          </label>
+          <label class="field">Weighting
+            <select id="weight">
+              <option value="equal">Equal per race</option>
+              <option value="sqrt">Square-root 7d volume</option>
+              <option value="volume">7d volume</option>
+            </select>
+          </label>
+          <label class="field">Minimum 7d volume
+            <select id="min-volume">
+              <option value="0">None</option><option value="10">10 contracts</option>
+              <option value="100">100 contracts</option><option value="1000">1,000 contracts</option>
+            </select>
+          </label>
+          <label class="toggle"><input type="checkbox" id="matched"> Matched-race cohort only</label>
+        </div>
+        <div class="chart-card">
+          <div class="section-heading">
+            <div><h2>Reliability diagram</h2><p>Observed frequency against implied probability</p></div>
+            <span class="subtle">10 percentage-point bins</span>
+          </div>
+          <svg id="calibration-plot" viewBox="0 0 700 480" role="img" aria-label="Reliability diagram comparing forecast horizons"></svg>
+          <div id="legend" class="legend"></div>
+          <p id="chart-note" class="caption"></p>
+        </div>
+        <div class="chart-card">
+          <h2>Scores by horizon</h2>
+          <div id="scores"></div>
+        </div>
+      </section>
+      <section class="view" id="markets" aria-label="Individual markets">
+        <p class="eyebrow">OBSERVATIONS</p><h1>Inspect the races.</h1>
+        <p class="intro">One forecast per market per horizon. Unresolved races remain visible but are excluded from calibration statistics.</p>
+        <div class="toolbar">
+          <label class="field">Search races <input id="search-markets" type="search" placeholder="e.g., CA-22 or Senate"></label>
+          <button id="export-csv" class="action">Export displayed CSV</button>
+        </div>
+        <div id="market-table" class="table-wrap"></div>
+      </section>
+      <section class="view" id="methods" aria-label="Methodology and data">
+        <p class="eyebrow">REPRODUCIBILITY</p><h1>Methods & data.</h1>
+        <div class="method">
+          <h2>What is scored?</h2>
+          <p>Each row represents a specific binary event at a fixed time before the outcome. A Brier loss is (probability − outcome)², where outcome is 0 or 1. Only called, certified, or settled outcomes are eligible; an uncalled race is never scored.</p>
+          <h2>Isochronic snapshots</h2>
+          <p>The initial 2026 study uses September 3, October 3, and November 2 at 3:00 p.m. Eastern. These are two calendar months, one calendar month, and one day before the November 3 election. Quote timestamps must be at or before each snapshot.</p>
+          <h2>Calibration bins and uncertainty</h2>
+          <p>Forecasts are grouped in 0.10-wide probability bins. Each point is the (possibly weighted) mean forecast and observed win rate. Vertical intervals are approximate 95% Wilson intervals, using Kish effective sample size when weighted. Correlated election outcomes can make those intervals too narrow.</p>
+          <h2>Volume</h2>
+          <p>The primary analysis gives every race equal weight. Optional weights use contracts traded in the seven days before each snapshot, not lifetime or post-forecast activity. Market size and liquidity can affect inclusion; a volume-weighted result answers a different question than event-level calibration.</p>
+          <h2>Missing data and comparability</h2>
+          <p>Missing, stale, or invalid probabilities are excluded, not imputed. Turn on “Matched-race cohort only” to compare the same resolved races at all three horizons. Source coverage and gaps must be inspected before publishing conclusions.</p>
+          <h2>Bring your own dataset</h2>
+          <p>Upload a local JSON dataset using the published schema. Data is handled in your browser only; uploads do not modify the repository.</p>
+          <div class="toolbar"><input id="data-file" type="file" accept=".json,application/json"><button id="reset-data" class="action secondary">Reload repository data</button></div>
+          <p class="caption" id="data-provenance"></p>
+          <h2>Repository</h2><p><a href="https://github.com/freireib/market-calibration" target="_blank" rel="noopener">Source code and dataset documentation</a></p>
+        </div>
+      </section>
+    </main>
+    <footer>Experimental research tool · Not trading advice · No simulated election results are displayed.</footer>
+  </div>
+  <script src="./app.js?v=1" defer></script>
+</body>
+</html>
