@@ -13,7 +13,12 @@ jobs:
         run: python3 scripts/collect_kalshi.py --self-test
       - name: Check JavaScript syntax
         run: node --check app.js
+      - name: Test calibration data filters and in-app refresh
+        run: node --test tests/*.test.cjs
+      - name: Test primary collector
+        run: python3 scripts/collect_primaries.py --self-test
       - name: Check JSON datasets
         run: |
           python3 -m json.tool data/observations.json > /dev/null
           python3 -m json.tool data/markets.json > /dev/null
+          python3 -m json.tool data/primaries_2026.json > /dev/null
