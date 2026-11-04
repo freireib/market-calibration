@@ -19,3 +19,16 @@
 .study-bar select{flex:1;min-width:0;font-size:15px;font-weight:650;border:1px solid #bfd0d4;background:#fff;border-radius:7px;padding:10px}
 [hidden]{display:none!important}
 @media(max-width:500px){.study-bar{max-width:none;margin-bottom:17px}}
+
+/* v0.2: data refresh and data-quality controls */
+.refresh-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0 4px}
+.refresh-toolbar .action{white-space:nowrap;min-height:39px}
+.refresh-toolbar .caption{flex:1;min-width:180px}
+.refresh-help{margin:0 0 15px;max-width:760px}
+.bin-coverage{padding:9px 11px;background:#f3f8f9;border:1px solid var(--line);border-radius:7px;margin-top:10px}
+.controls .field select{max-width:240px;min-width:148px}
+@media(max-width:690px){
+ .refresh-toolbar .caption{min-width:0;flex-basis:185px}
+ .controls .field{flex:1 1 145px}
+ .controls .field select{width:100%;max-width:none;min-width:0}
+}
