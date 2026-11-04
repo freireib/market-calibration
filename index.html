@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#132c37">
   <meta name="description" content="A reproducible look at how accurately prediction markets forecast events.">
   <title>Market Calibration</title>
-  <link rel="stylesheet" href="./style.css?v=3">
+  <link rel="stylesheet" href="./style.css?v=5">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <span class="bullseye" aria-hidden="true"></span>
       <div class="brand"><strong>Market Calibration</strong><small>Measuring the accuracy of market probabilities</small></div>
-      <span class="version">v0.1</span>
+      <span class="version">v0.2</span>
     </header>
     <nav class="tabs" aria-label="Pages">
       <button class="tab active" data-view="calibration" aria-current="page">Calibration</button>
@@ -31,6 +31,11 @@
         <h1>Were the odds right?</h1>
         <p class="intro" id="study-intro">Candidate-level YES forecasts at one day, one week, one month, and two months before each primary or runoff.</p>
         <div id="dataset-status" class="notice" role="status">Loading dataset…</div>
+        <div class="refresh-toolbar">
+          <button class="action secondary" id="refresh-data" type="button" aria-describedby="refresh-help">Refresh data</button>
+          <span id="refresh-status" class="caption" role="status" aria-live="polite">Loading published dataset…</span>
+        </div>
+        <p id="refresh-help" class="caption refresh-help">Checks the latest dataset published to GitHub without reloading the page. New exchange data is collected separately through GitHub Actions.</p>
         <div class="summary" id="summary"></div>
         <div class="controls">
           <fieldset><legend>Horizon</legend>
@@ -58,16 +63,38 @@
               <option value="100">100 contracts</option><option value="1000">1,000 contracts</option>
             </select>
           </label>
+          <label class="field">Maximum 7d volume
+            <select id="max-volume">
+              <option value="0">No limit</option><option value="100">100 contracts</option>
+              <option value="1000">1,000 contracts</option><option value="10000">10,000 contracts</option>
+              <option value="100000">100,000 contracts</option><option value="1000000">1,000,000 contracts</option>
+            </select>
+          </label>
+          <label class="field">Probability bin width
+            <select id="bin-width">
+              <option value="5">5%</option><option value="10" selected>10%</option>
+              <option value="20">20%</option><option value="25">25%</option>
+            </select>
+          </label>
+          <label class="field">Minimum observations per bin
+            <select id="min-bin-count">
+              <option value="1" selected>1 (show all)</option>
+              <option value="2">2</option><option value="3">3</option>
+              <option value="5">5</option><option value="10">10</option>
+              <option value="20">20</option><option value="50">50</option>
+            </select>
+          </label>
           <label class="toggle"><input type="checkbox" id="matched"> Matched cohort only</label>
         </div>
         <div class="chart-card">
           <div class="section-heading">
             <div><h2>Reliability diagram</h2><p>Observed frequency against implied probability</p></div>
-            <span class="subtle">10 percentage-point bins</span>
+            <span class="subtle">Adjustable probability bins</span>
           </div>
           <svg id="calibration-plot" viewBox="0 0 700 480" role="img" aria-label="Reliability diagram comparing forecast horizons"></svg>
           <div id="legend" class="legend"></div>
           <p id="chart-note" class="caption"></p>
+          <p id="bin-coverage" class="caption bin-coverage"></p>
           <details class="bin-details"><summary>Inspect bin counts and Brier loss contributions</summary><div id="calibration-bins" class="table-wrap"></div></details>
         </div>
         <div class="chart-card">
@@ -94,11 +121,13 @@
           <h2>Isochronic snapshots</h2>
           <p>The general-election study uses September 3, October 3, and November 2 at 3:00 p.m. Eastern before November 3. Primary forecasts use two calendar months, one calendar month, seven days, and one day before each contest's actual election or runoff date, at 3 p.m. Eastern. Quotes must precede their respective cutoff.</p>
           <h2>Calibration bins and uncertainty</h2>
-          <p>Forecasts are grouped in 0.10-wide probability bins. Each point is the (possibly weighted) mean forecast and observed win rate. Vertical intervals are approximate 95% Wilson intervals, using Kish effective sample size when weighted. Correlated election outcomes can make those intervals too narrow.</p>
+          <p>Use 5%, 10%, 20%, or 25% probability bins. You can hide bins containing fewer than a selected number of contract observations. Each visible point shows the mean quoted probability and observed event frequency. The point-size counts and approximately 95% Wilson intervals are based on displayed bins; Kish effective sample size is used when volume-weighted. Correlated outcomes can make those intervals too narrow. <strong>Hiding low-count bins changes the reliability diagram only; Brier scores still include all eligible contracts.</strong></p>
           <h2>Volume</h2>
-          <p>The primary analysis gives every race equal weight. Optional weights use contracts traded in the seven days before each snapshot, not lifetime or post-forecast activity. Market size and liquidity can affect inclusion; a volume-weighted result answers a different question than event-level calibration.</p>
+          <p>The default gives each binary contract equal weight. You can include only contracts trading at least a minimum number of contracts or no more than a maximum number in the seven days <em>before each snapshot</em>. A volume threshold excludes records without a known pre-snapshot volume. These are volume units in contracts, not dollars. Limits apply to all charts, scores, and the market table, including the matched-cohort comparison. They remove high-volume observations from the sample; they do not establish whether trading manipulation occurred. Optional weighting by volume or its square root is a distinct choice.</p>
           <h2>Missing data and comparability</h2>
           <p>Missing, stale, or invalid probabilities are excluded, not imputed. Turn on “Matched-race cohort only” to compare the same resolved races at all three horizons. Source coverage and gaps must be inspected before publishing conclusions.</p>
+          <h2>Refresh without reloading</h2>
+          <p>The Refresh data button requests the most recent JSON already published on GitHub Pages and updates the chart while preserving your filter selections. It does not trigger the Kalshi API collector; to get newer settled results first run the appropriate GitHub Actions collection workflow.</p>
           <h2>Bring your own dataset</h2>
           <p>Upload a local JSON dataset using the published schema. Data is handled in your browser only; uploads do not modify the repository.</p>
           <div class="toolbar"><input id="data-file" type="file" accept=".json,application/json"><button id="reset-data" class="action secondary">Reload repository data</button></div>
@@ -109,6 +138,6 @@
     </main>
     <footer>Experimental research tool · Not trading advice · No simulated election results are displayed.</footer>
   </div>
-  <script src="./app.js?v=4" defer></script>
+  <script src="./app.js?v=5" defer></script>
 </body>
 </html>
