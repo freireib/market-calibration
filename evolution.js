@@ -125,3 +125,11 @@ function renderEvolution(rows,sel) {
     +(sel.matched?' Matched cohort selected.':' Forecast counts differ by horizon; trends may reflect changing sample composition.')
     +' The dashed benchmark is the expected Brier under calibrated forecasts, mean p(1−p); it is not a formal calibration-error decomposition. Minimum calibration-bin count is display-only.';
 }
+
+if(typeof document !== 'undefined' && typeof document.addEventListener==='function'){
+  // A very fast cached JSON request might resolve before the deferred chart script.
+  // Render again once all deferred scripts are loaded, without refreshing the page.
+  document.addEventListener('DOMContentLoaded',()=>{
+    if(records.length && typeof render==='function')render();
+  });
+}
