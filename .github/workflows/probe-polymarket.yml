@@ -1,0 +1,41 @@
+name: Probe Polymarket archived election prices
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/probe-polymarket.yml'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe Gamma market metadata and pre-election CLOB pricing
+        run: |
+          python - <<'PY'
+          import json,urllib.request,urllib.parse,datetime
+          def get(url,params):
+            u=url+"?"+urllib.parse.urlencode(params)
+            with urllib.request.urlopen(urllib.request.Request(u,headers={"User-Agent":"MarketCalibrationResearch/0.2","Accept":"application/json"}),timeout=24) as r: return json.load(r)
+          for slug in ["republican-nominee-for-florida-governor","michigan-democratic-senate-primary-winner"]:
+            try:
+              events=get("https://gamma-api.polymarket.com/events",{"slug":slug,"limit":2})
+              if not events:
+                print("EVENT_MISSING",slug);continue
+              event=events[0]
+              print("EVENT",slug,json.dumps({"id":event.get("id"),"title":event.get("title"),"closed":event.get("closed"),"numMarkets":len(event.get("markets",[])),"startDate":event.get("startDate"),"endDate":event.get("endDate")}))
+              for m in event.get("markets",[])[:3]:
+                print("MARKET",slug,json.dumps({k:m.get(k) for k in ("id","question","outcomes","outcomePrices","clobTokenIds","closed","resolved","endDate","conditionId","umaResolutionStatus","volume")})[:1400])
+              m=next((m for m in event.get("markets",[]) if m.get("clobTokenIds")),None)
+              if not m:continue
+              ids=m.get("clobTokenIds")
+              if isinstance(ids,str):ids=json.loads(ids)
+              token=ids[0]
+              snap=datetime.datetime(2026,8,17,19,tzinfo=datetime.timezone.utc).timestamp() if slug.startswith("republican") else datetime.datetime(2026,8,3,19,tzinfo=datetime.timezone.utc).timestamp()
+              try:
+                hist=get("https://clob.polymarket.com/prices-history",{"market":token,"startTs":int(snap)-86400*3,"endTs":int(snap),"fidelity":60})
+                prices=hist.get("history",[])
+                print("HISTORY",slug,"points",len(prices),"first",prices[:2],"last",prices[-2:])
+              except Exception as e:print("HISTORY_ERROR",slug,str(e)[:350])
+            except Exception as e:print("EVENT_ERROR",slug,str(e)[:350])
+          PY
