@@ -35,7 +35,7 @@ jobs:
       - name: Verify collector and market parsers
         run: python scripts/collect_kalshi.py --self-test
       - name: Discover eligible real Kalshi contracts
-        run: python scripts/discover_kalshi.py --scope "${{ inputs.scope || 'pilot' }}"
+        run: python scripts/discover_kalshi.py --scope "${{ inputs.scope || 'all' }}"
       - name: Collect historical snapshots and resolved outcomes
         run: python scripts/collect_kalshi.py
       - name: Validate observations
