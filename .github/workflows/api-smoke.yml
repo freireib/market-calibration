@@ -1,0 +1,44 @@
+name: Kalshi API smoke test
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/api-smoke.yml'
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline collector tests
+        run: python scripts/collect_kalshi.py --self-test
+      - name: Check live Kalshi endpoints and snapshot parsing
+        run: |
+          python - <<'PY'
+          import json, sys
+          from datetime import datetime,timezone
+          sys.path.insert(0,"scripts")
+          from collect_kalshi import get_market,get_candles,snapshot,HORIZONS,api_get
+          s="HOUSECA22"; t="HOUSECA22-26-D"
+          market=get_market(t)
+          print("MARKET",json.dumps({k:market.get(k) for k in ("ticker","status","result","title","event_ticker","yes_sub_title")}))
+          for h,dt in HORIZONS.items():
+            end=int(dt.timestamp())
+            try:
+              candles=get_candles(s,t,end-8*86400,end)
+              print("SNAPSHOT",h,len(candles),json.dumps(snapshot(candles,end)))
+              if candles:
+                print("RAW_CANDLE",h,json.dumps(candles[-1])[:1300])
+            except Exception as e:
+              print("CANDLE_ERROR",h,repr(e))
+          for series in ["SENATETX","HOUSEPA07","HOUSECA22"]:
+            try:
+              data=api_get("/events",{"series_ticker":series,"limit":3})
+              events=data.get("events",[])
+              print("EVENTS",series,json.dumps([{"event_ticker":e.get("event_ticker"),"title":e.get("title")} for e in events]))
+            except Exception as e: print("EVENTS_ERROR",series,repr(e))
+          PY
