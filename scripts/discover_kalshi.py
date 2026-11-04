@@ -47,7 +47,8 @@ def candidates(scope):
         for n in (range(1,seats+1) if seats>1 else (0,1))
     ]
     for state,n in pairs:
-        yield f"HOUSE{state}{n:02}",f"{state}-{n:02} · U.S. House","House"
+        suffix = "AL" if HOUSE_SEATS[state] == 1 else f"{n:02}"
+        yield f"HOUSE{state}{n:02}",f"{state}-{suffix} · U.S. House","House"
 
 def discover(scope):
     market_catalog = {}
