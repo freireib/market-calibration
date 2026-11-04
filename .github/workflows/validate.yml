@@ -12,7 +12,9 @@ jobs:
       - name: Run collector's offline tests
         run: python3 scripts/collect_kalshi.py --self-test
       - name: Check JavaScript syntax
-        run: node --check app.js
+        run: |
+          node --check app.js
+          node --check evolution.js
       - name: Test calibration data filters and in-app refresh
         run: node --test tests/*.test.cjs
       - name: Test primary collector
