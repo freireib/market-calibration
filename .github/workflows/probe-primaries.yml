@@ -28,6 +28,14 @@ jobs:
                     if str(m.get('result','')).lower()=='yes':
                       print("WINNER",ticker,m.get('ticker'),m.get('yes_sub_title'),m.get('result'))
               except Exception as e:print("EVENT_ERROR",ticker,repr(e))
+          for series in ["KXSENATEMID","KXGOVFLNOMR","KXSENATETXD","KXGOVWINOMD","KXSENATEMAD"]:
+            for path,params in [("/historical/markets",{"series_ticker":series,"limit":200}),("/events/"+series+"-26",{"with_nested_markets":"true"})]:
+              try:
+                d=api_get(path,params)
+                ms=d.get("markets",[])
+                print("FIND",series,path,"N",len(ms),"C",bool(d.get("cursor")),
+                      "SAMPLE",json.dumps([{k:m.get(k) for k in ("ticker","status","result","close_time","yes_sub_title")} for m in ms[:2]])[:600])
+              except Exception as e:print("FIND_ERROR",series,path,repr(e))
           for path in ['/historical/cutoff','/historical/markets']:
             try:
               d=api_get(path, {'limit':2} if path.endswith('markets') else None)
