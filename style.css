@@ -50,3 +50,14 @@
 .study-bar select:disabled{color:#60737c;background:#eef4f5}
 .provider-note{max-width:910px;padding:10px 12px;border:1px solid #dfd4bf;border-radius:8px;background:#fffaf1;margin:-9px 0 18px}
 @media(max-width:680px){.study-bar{grid-template-columns:auto minmax(0,1fr);gap:8px}.study-bar select{min-width:0}}
+
+/* KDE view: smoothing control stays alongside the probability-density chart. */
+.kde-heading{align-items:end;margin-bottom:12px}
+.kde-heading .kde-control{flex:none}
+.kde-control select{min-width:175px}
+#probability-distribution{margin:2px 0 8px}
+@media(max-width:570px){
+  .kde-heading{display:flex;flex-direction:column;align-items:stretch}
+  .kde-heading .kde-control{width:100%;max-width:245px}
+  .kde-control select{width:100%}
+}
