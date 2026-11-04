@@ -44,3 +44,9 @@
 .legend-key.actual{color:#b47737}.legend-key.benchmark{color:#4977ac;border-top-style:dashed}
 #evolution-table{margin-top:8px}#evolution-note{margin-top:13px}
 @media(max-width:700px){.trend-grid{grid-template-columns:1fr}.trend-grid>div{padding:9px}}
+
+/* Provider selection: do not imply the two datasets are pooled. */
+.study-bar{max-width:920px;display:grid;grid-template-columns:auto minmax(160px,1fr) auto minmax(200px,1fr);align-items:center;gap:10px}
+.study-bar select:disabled{color:#60737c;background:#eef4f5}
+.provider-note{max-width:910px;padding:10px 12px;border:1px solid #dfd4bf;border-radius:8px;background:#fffaf1;margin:-9px 0 18px}
+@media(max-width:680px){.study-bar{grid-template-columns:auto minmax(0,1fr);gap:8px}.study-bar select{min-width:0}}
