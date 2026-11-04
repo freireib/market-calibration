@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#132c37">
   <meta name="description" content="A reproducible look at how accurately prediction markets forecast events.">
   <title>Market Calibration</title>
-  <link rel="stylesheet" href="./style.css?v=8">
+  <link rel="stylesheet" href="./style.css?v=9">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <span class="bullseye" aria-hidden="true"></span>
       <div class="brand"><strong>Market Calibration</strong><small>Measuring the accuracy of market probabilities</small></div>
-      <span class="version">v0.2</span>
+      <span class="version">v0.4</span>
     </header>
     <nav class="tabs" aria-label="Pages">
       <button class="tab active" data-view="calibration" aria-current="page">Calibration</button>
@@ -109,10 +109,23 @@
           <div id="scores"></div>
         </div>
         <div class="chart-card">
-          <h2>Where are the probabilities concentrated?</h2>
-          <p class="caption">Each bar shows the distribution of predictions within that horizon. The middle 25–75% group is highlighted. Filters and weighting apply.</p>
-          <svg id="probability-distribution" viewBox="0 0 700 324" role="img" aria-label="Probability distribution by forecast horizon"></svg>
+          <div class="section-heading kde-heading">
+            <div>
+              <h2>Distribution of forecast probabilities</h2>
+              <p>Smoothed probability density, colored by forecast horizon</p>
+            </div>
+            <label class="field kde-control" for="kde-bandwidth">KDE bandwidth
+              <select id="kde-bandwidth">
+                <option value="4">4 percentage points</option>
+                <option value="7" selected>7 percentage points</option>
+                <option value="10">10 percentage points</option>
+                <option value="15">15 percentage points</option>
+              </select>
+            </label>
+          </div>
+          <svg id="probability-distribution" viewBox="0 0 700 360" role="img" aria-label="Boundary-corrected kernel density curves of forecast probabilities by horizon"></svg>
           <div id="distribution-legend" class="legend"></div>
+          <p class="caption">Each colored density integrates to 1 over 0–100%. Reflected Gaussian kernels account for probabilities clustering at the 0% and 100% boundaries. Curves share the study, volume, weighting, and matched-cohort filters. Density peaks can exceed 1.</p>
         </div>
         <div class="chart-card">
           <h2>Uncertainty and accuracy versus horizon</h2>
