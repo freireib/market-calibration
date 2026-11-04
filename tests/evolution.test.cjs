@@ -36,13 +36,35 @@ test('horizon diagnostics compute uncertainty, expected loss and actual Brier fr
   assert.equal(one.mid,.5);
   assert.equal(one.extreme,.5);
 });
-test('probability distribution buckets partition [0,1] without double counting',()=>{
+test('reflected KDE integrates to 1 with mass at the probability boundaries',()=>{
   const x=context();
-  const boundaries=[0,.0999,.1,.2499,.25,.5,.75,.7501,.9,.9001,1];
-  boundaries.forEach(p=>{
-    const count=vm.runInContext('PROB_RANGES',x).filter(b=>b.contains(p)).length;
-    assert.equal(count,1,'p='+p);
-  });
+  const rows=[{probability:0,volume_7d:10},{probability:1,volume_7d:10}];
+  for(const h of [.04,.07,.10,.15]){
+    const curve=x.estimateProbabilityKDE(rows,'equal',h,400);
+    assert.equal(curve.length,401);
+    const area=curve.reduce((sum,p,i)=>sum+p.y*((i===0||i===400)?.5:1),0)/400;
+    assert.ok(Math.abs(area-1)<1e-8,'area='+area+' bandwidth='+h);
+    assert.ok(curve.every(p=>Number.isFinite(p.y)&&p.y>=0));
+    assert.ok(curve[0].y>curve[200].y*20);
+    assert.ok(Math.abs(curve[0].y-curve[400].y)<1e-8);
+  }
+});
+test('KDE honors prior-seven-day weighting but does not change sample counts',()=>{
+  const x=context();
+  const rows=[{probability:.1,volume_7d:1},{probability:.9,volume_7d:100}];
+  const equal=x.estimateProbabilityKDE(rows,'equal',.05,200);
+  const volume=x.estimateProbabilityKDE(rows,'volume',.05,200);
+  assert.ok(Math.abs(equal[20].y-equal[180].y)<1e-8);
+  assert.ok(volume[180].y>volume[20].y*30);
+  assert.equal(x.estimateProbabilityKDE([], 'equal', .07).length,0);
+});
+test('KDE bandwidth input and horizon-colored distribution are present',()=>{
+  const source=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
+  assert.match(source,/id="kde-bandwidth"/);
+  assert.match(source,/viewBox="0 0 700 360"/);
+  const js=fs.readFileSync(path.join(__dirname,'..','evolution.js'),'utf8');
+  assert.ok(js.includes("stroke:item.color"));
+  assert.ok(js.includes('estimateProbabilityKDE(item.rows,sel.weight,bandwidth)'));
 });
 test('HTML declares the trend and distribution elements',()=>{
   const source=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');
