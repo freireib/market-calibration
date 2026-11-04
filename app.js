@@ -319,7 +319,7 @@ byId('study').addEventListener('change',()=>{
   week.hidden=!primary;
   const dayLabels=document.querySelectorAll('input[name="horizon"]');
   dayLabels.forEach(x=>{x.checked=primary||x.value!=='one_week';});
-  byId('matched').checked=true;
+  byId('matched').checked=!primary;
   loadRepository();
 });
 byId('export-csv').addEventListener('click',exportCsv);
