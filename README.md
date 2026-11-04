@@ -28,8 +28,12 @@ Run `python3 scripts/collect_primaries.py`, or use **Actions → Collect 2026 pr
 
 The v0.3 interface includes three new views on the filtered observations:
 
-- **Forecast probability distributions:** stacked bars show the fractions in
-  0–10%, 10–25%, 25–75%, 75–90%, and 90–100% probability ranges at each horizon.
+- **Forecast probability distributions:** overlapping Gaussian kernel-density estimates
+  (KDEs), with YES probability on the x-axis and density on the y-axis. One
+  curve per forecast horizon uses the same colors as the reliability diagram.
+  Kernels reflect at 0% and 100% to avoid edge bias; smoothing bandwidth
+  is adjustable (4, 7, 10, or 15 percentage points). Each density integrates
+  to 1, so different-sized samples remain comparable in shape.
 - **Forecast uncertainty by horizon:** mean binary entropy
   `H(p)=-p log2 p -(1-p) log2(1-p)`, measured in bits.
 - **Brier over time versus a calibrated-reference benchmark:** actual mean
