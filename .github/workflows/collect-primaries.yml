@@ -1,0 +1,55 @@
+name: Collect 2026 primary history
+on:
+  push:
+    paths:
+      - '.github/workflows/collect-primaries.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: market-calibration-primaries
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test collector logic
+        run: python scripts/collect_primaries.py --self-test
+      - name: Download primary market histories
+        run: python scripts/collect_primaries.py --limit-events 3
+      - name: Validate empirical dataset
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("data/primaries_2026.json"))
+          rows=d["records"]
+          assert rows
+          assert all(x["horizon"] in {"two_months","one_month","one_week","one_day"} for x in rows)
+          assert all(x["outcome"] is None or x["outcome"] in (0,1) for x in rows)
+          print("PRIMARY_RESULT",d["statistics"])
+          assert sum(x["probability"] is not None and x["outcome"] is not None for x in rows)>0, "No scored observations"
+          for h in ("two_months","one_month","one_week","one_day"):
+            group=[x for x in rows if x["horizon"]==h and x["probability"] is not None and x["outcome"] is not None]
+            brier=(sum((x["probability"]-x["outcome"])**2 for x in group)/len(group)) if group else None
+            print("PRIMARY_HORIZON",h,"N",len(group),"BRIER",brier)
+          PY
+      - name: Upload data backup
+        uses: actions/upload-artifact@v4
+        with:
+          name: primary-2026-history
+          path: data/primaries_2026.json
+          retention-days: 30
+      - name: Publish primary data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/primaries_2026.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish 2026 primary forecasting history"
+            git push
+          fi
