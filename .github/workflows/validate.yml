@@ -1,0 +1,19 @@
+name: Validate Market Calibration
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Python syntax
+        run: python3 -m py_compile scripts/collect_kalshi.py
+      - name: Run collector's offline tests
+        run: python3 scripts/collect_kalshi.py --self-test
+      - name: Check JavaScript syntax
+        run: node --check app.js
+      - name: Check JSON datasets
+        run: |
+          python3 -m json.tool data/observations.json > /dev/null
+          python3 -m json.tool data/markets.json > /dev/null
