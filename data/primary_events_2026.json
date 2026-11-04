@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "description": "Auditable curated list of 2026 primary nomination events; primary_date denotes final selection date, including runoffs.",
+  "source": "https://kalshi.com/category/elections/primaries; https://www.ncsl.org/elections-and-campaigns/2026-state-primary-election-dates",
+  "events": [
+    {
+      "series": "KXGOVFLNOMR",
+      "event_ticker": "KXGOVFLNOMR-26",
+      "primary_date": "2026-08-18",
+      "category": "Governor",
+      "label": "Florida · Republican governor"
+    },
+    {
+      "series": "KXSENATEMID",
+      "event_ticker": "KXSENATEMID-26",
+      "primary_date": "2026-08-04",
+      "category": "Senate",
+      "label": "Michigan · Democratic Senate"
+    },
+    {
+      "series": "KXSCRSENS",
+      "event_ticker": "KXSCRSENS-26",
+      "primary_date": "2026-08-25",
+      "category": "Senate",
+      "label": "South Carolina · Republican Senate special runoff"
+    },
+    {
+      "series": "KXKY4R",
+      "event_ticker": "KXKY4R-26",
+      "primary_date": "2026-05-19",
+      "category": "House",
+      "label": "Kentucky 04 · Republican House"
+    },
+    {
+      "series": "KXSENATETXR",
+      "event_ticker": "KXSENATETXR-26",
+      "primary_date": "2026-05-26",
+      "category": "Senate",
+      "label": "Texas · Republican Senate runoff"
+    },
+    {
+      "series": "KXGOVWINOMD",
+      "event_ticker": "KXGOVWINOMD-26",
+      "primary_date": "2026-08-11",
+      "category": "Governor",
+      "label": "Wisconsin · Democratic governor"
+    },
+    {
+      "series": "KXSENATETXD",
+      "event_ticker": "KXSENATETXD-26",
+      "primary_date": "2026-03-03",
+      "category": "Senate",
+      "label": "Texas · Democratic Senate"
+    },
+    {
+      "series": "KXSENATEMED",
+      "event_ticker": "KXSENATEMED-26",
+      "primary_date": "2026-06-09",
+      "category": "Senate",
+      "label": "Maine · Democratic Senate"
+    },
+    {
+      "series": "KXSENATEMAD",
+      "event_ticker": "KXSENATEMAD-26",
+      "primary_date": "2026-09-01",
+      "category": "Senate",
+      "label": "Massachusetts · Democratic Senate"
+    },
+    {
+      "series": "KXGOVOKNOMR",
+      "event_ticker": "KXGOVOKNOMR-26",
+      "primary_date": "2026-08-25",
+      "category": "Governor",
+      "label": "Oklahoma · Republican governor runoff"
+    },
+    {
+      "series": "KXMI13D",
+      "event_ticker": "KXMI13D-26",
+      "primary_date": "2026-08-04",
+      "category": "House",
+      "label": "Michigan 13 · Democratic House"
+    },
+    {
+      "series": "KXGOVSCNOMR",
+      "event_ticker": "KXGOVSCNOMR-26",
+      "primary_date": "2026-06-23",
+      "category": "Governor",
+      "label": "South Carolina · Republican governor runoff"
+    },
+    {
+      "series": "KXGOVOHNOMR",
+      "event_ticker": "KXGOVOHNOMR-26",
+      "primary_date": "2026-05-05",
+      "category": "Governor",
+      "label": "Ohio · Republican governor"
+    },
+    {
+      "series": "KXGOVGANOMD",
+      "event_ticker": "KXGOVGANOMD-26",
+      "primary_date": "2026-05-19",
+      "category": "Governor",
+      "label": "Georgia · Democratic governor"
+    },
+    {
+      "series": "KXGOVGANOMR",
+      "event_ticker": "KXGOVGANOMR-26",
+      "primary_date": "2026-06-16",
+      "category": "Governor",
+      "label": "Georgia · Republican governor runoff"
+    },
+    {
+      "series": "KXGOVIANOMR",
+      "event_ticker": "KXGOVIANOMR-26",
+      "primary_date": "2026-06-02",
+      "category": "Governor",
+      "label": "Iowa · Republican governor"
+    },
+    {
+      "series": "KXNJ11SD",
+      "event_ticker": "KXNJ11SD-26",
+      "primary_date": "2026-02-05",
+      "category": "House",
+      "label": "New Jersey 11 · special Democratic House"
+    },
+    {
+      "series": "KXSENATELAR",
+      "event_ticker": "KXSENATELAR-26",
+      "primary_date": "2026-06-27",
+      "category": "Senate",
+      "label": "Louisiana · Republican Senate runoff"
+    },
+    {
+      "series": "KXGOVSDNOMR",
+      "event_ticker": "KXGOVSDNOMR-26",
+      "primary_date": "2026-07-28",
+      "category": "Governor",
+      "label": "South Dakota · Republican governor runoff"
+    },
+    {
+      "series": "KXGOVMNNOMR",
+      "event_ticker": "KXGOVMNNOMR-26",
+      "primary_date": "2026-08-11",
+      "category": "Governor",
+      "label": "Minnesota · Republican governor"
+    },
+    {
+      "series": "KXSENATEALR",
+      "event_ticker": "KXSENATEALR-26",
+      "primary_date": "2026-06-16",
+      "category": "Senate",
+      "label": "Alabama · Republican Senate runoff"
+    },
+    {
+      "series": "KXSENATEGAR",
+      "event_ticker": "KXSENATEGAR-26",
+      "primary_date": "2026-06-16",
+      "category": "Senate",
+      "label": "Georgia · Republican Senate runoff"
+    },
+    {
+      "series": "KXGOVMINOMR",
+      "event_ticker": "KXGOVMINOMR-26",
+      "primary_date": "2026-08-04",
+      "category": "Governor",
+      "label": "Michigan · Republican governor"
+    },
+    {
+      "series": "KXMO01D",
+      "event_ticker": "KXMO01D-26",
+      "primary_date": "2026-08-04",
+      "category": "House",
+      "label": "Missouri 01 · Democratic House"
+    },
+    {
+      "series": "KXGOVCONOMR",
+      "event_ticker": "KXGOVCONOMR-26",
+      "primary_date": "2026-06-30",
+      "category": "Governor",
+      "label": "Colorado · Republican governor"
+    },
+    {
+      "series": "KXNY12D",
+      "event_ticker": "KXNY12D-26",
+      "primary_date": "2026-06-23",
+      "category": "House",
+      "label": "New York 12 · Democratic House"
+    },
+    {
+      "series": "KXNY13D",
+      "event_ticker": "KXNY13D-26",
+      "primary_date": "2026-06-23",
+      "category": "House",
+      "label": "New York 13 · Democratic House"
+    },
+    {
+      "series": "KXGOVRINOMD",
+      "event_ticker": "KXGOVRINOMD-26",
+      "primary_date": "2026-09-09",
+      "category": "Governor",
+      "label": "Rhode Island · Democratic governor"
+    },
+    {
+      "series": "KXSENATENHD",
+      "event_ticker": "KXSENATENHD-26",
+      "primary_date": "2026-09-08",
+      "category": "Senate",
+      "label": "New Hampshire · Democratic Senate"
+    },
+    {
+      "series": "KXSENATEILD",
+      "event_ticker": "KXSENATEILD-26",
+      "primary_date": "2026-03-17",
+      "category": "Senate",
+      "label": "Illinois · Democratic Senate"
+    }
+  ]
+}
