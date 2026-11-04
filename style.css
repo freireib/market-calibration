@@ -32,3 +32,15 @@
  .controls .field{flex:1 1 145px}
  .controls .field select{width:100%;max-width:none;min-width:0}
 }
+
+/* v0.3 uncertainty diagnostics */
+#probability-distribution,#entropy-trend,#brier-trend{display:block;width:100%;height:auto}
+.legend-swatch{width:13px;height:13px;border-radius:2px;display:inline-block;flex:none}
+.trend-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0 22px}
+.trend-grid>div{border:1px solid var(--line);border-radius:8px;padding:13px;background:#fcfefe;min-width:0}
+.trend-grid h3{font-size:14px;margin:0 0 9px}
+.trend-grid p{margin:6px 0 0}
+.legend-key{display:inline-block;width:18px;border-top:3px solid currentColor;vertical-align:middle}
+.legend-key.actual{color:#b47737}.legend-key.benchmark{color:#4977ac;border-top-style:dashed}
+#evolution-table{margin-top:8px}#evolution-note{margin-top:13px}
+@media(max-width:700px){.trend-grid{grid-template-columns:1fr}.trend-grid>div{padding:9px}}
