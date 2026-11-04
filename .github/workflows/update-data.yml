@@ -1,0 +1,76 @@
+name: Collect 2026 election market data
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "Pilot or all available 2026 races"
+        type: choice
+        required: true
+        default: pilot
+        options:
+          - pilot
+          - all
+  push:
+    paths:
+      - '.github/workflows/update-data.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-calibration-data
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify collector and market parsers
+        run: python scripts/collect_kalshi.py --self-test
+      - name: Discover eligible real Kalshi contracts
+        run: python scripts/discover_kalshi.py --scope "${{ inputs.scope || 'pilot' }}"
+      - name: Collect historical snapshots and resolved outcomes
+        run: python scripts/collect_kalshi.py
+      - name: Validate observations
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("data/observations.json"))
+          rows=d["records"]
+          assert rows
+          assert all(r["horizon"] in ("one_day","one_month","two_months") for r in rows)
+          assert all(r["probability"] is None or 0<=r["probability"]<=1 for r in rows)
+          assert all(r["outcome"] is None or r["outcome"] in (0,1) for r in rows)
+          print("VALIDATED_RECORDS",len(rows),
+            "QUOTE_RECORDS",sum(r["probability"] is not None for r in rows),
+            "SCORED_RECORDS",sum(r["probability"] is not None and r["outcome"] is not None for r in rows))
+          for h in ("two_months","one_month","one_day"):
+              r=[x for x in rows if x["horizon"]==h and x["probability"] is not None and x["outcome"] is not None]
+              print("HORIZON",h,"N",len(r),"BRIER",
+                 round(sum((x["probability"]-x["outcome"])**2 for x in r)/len(r),4) if r else None)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: election-market-data
+          path: |
+            data/markets.json
+            data/observations.json
+          retention-days: 14
+      - name: Commit observed data to site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/markets.json data/observations.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update 2026 election forecast observations"
+            git push
+          fi
