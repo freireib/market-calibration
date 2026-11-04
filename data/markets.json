@@ -273,6 +273,14 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-houseca21",
+    "label": "CA-21 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSECA21",
+    "ticker": "HOUSECA21-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseca22",
     "label": "CA-22 \u00b7 U.S. House",
     "category": "House",
@@ -297,11 +305,59 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-houseca45",
+    "label": "CA-45 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSECA45",
+    "ticker": "HOUSECA45-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseca47",
+    "label": "CA-47 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSECA47",
+    "ticker": "HOUSECA47-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseca49",
+    "label": "CA-49 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSECA49",
+    "ticker": "HOUSECA49-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-housefl13",
+    "label": "FL-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSEFL13",
+    "ticker": "HOUSEFL13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-housefl23",
+    "label": "FL-23 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSEFL23",
+    "ticker": "HOUSEFL23-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseil17",
     "label": "IL-17 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEIL17",
     "ticker": "HOUSEIL17-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-housemi10",
+    "label": "MI-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSEMI10",
+    "ticker": "HOUSEMI10-26-D"
   },
   {
     "provider": "Kalshi",
@@ -313,6 +369,38 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-houseny18",
+    "label": "NY-18 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSENY18",
+    "ticker": "HOUSENY18-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseny19",
+    "label": "NY-19 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSENY19",
+    "ticker": "HOUSENY19-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseny22",
+    "label": "NY-22 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSENY22",
+    "ticker": "HOUSENY22-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseoh13",
+    "label": "OH-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSEOH13",
+    "ticker": "HOUSEOH13-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housepa10",
     "label": "PA-10 \u00b7 U.S. House",
     "category": "House",
@@ -321,11 +409,35 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-housepa17",
+    "label": "PA-17 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSEPA17",
+    "ticker": "HOUSEPA17-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housetx15",
     "label": "TX-15 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSETX15",
     "ticker": "HOUSETX15-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-housetx28",
+    "label": "TX-28 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSETX28",
+    "ticker": "HOUSETX28-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-housetx34",
+    "label": "TX-34 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSETX34",
+    "ticker": "HOUSETX34-26-D"
   },
   {
     "provider": "Kalshi",
