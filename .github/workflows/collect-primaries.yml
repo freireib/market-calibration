@@ -21,7 +21,7 @@ jobs:
       - name: Test collector logic
         run: python scripts/collect_primaries.py --self-test
       - name: Download primary market histories
-        run: python scripts/collect_primaries.py --limit-events 3
+        run: python scripts/collect_primaries.py
       - name: Validate empirical dataset
         run: |
           python - <<'PY'
@@ -51,5 +51,7 @@ jobs:
           git add data/primaries_2026.json
           if ! git diff --cached --quiet; then
             git commit -m "Publish 2026 primary forecasting history"
+            git fetch origin main
+            git rebase origin/main
             git push
           fi
