@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '.github/workflows/collect-primaries.yml'
+      # Run collection on this workflow's updates; refreshed source data is committed below.
   workflow_dispatch:
 permissions:
   contents: write
