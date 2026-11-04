@@ -24,6 +24,34 @@ The primary reliability diagram is **binary candidate-contract calibration**, no
 
 Run `python3 scripts/collect_primaries.py`, or use **Actions → Collect 2026 primary history → Run workflow** to refresh the public `data/primaries_2026.json` dataset.
 
+## Forecast sharpness and additional prediction markets
+
+The v0.3 interface includes three new views on the filtered observations:
+
+- **Forecast probability distributions:** stacked bars show the fractions in
+  0–10%, 10–25%, 25–75%, 75–90%, and 90–100% probability ranges at each horizon.
+- **Forecast uncertainty by horizon:** mean binary entropy
+  `H(p)=-p log2 p -(1-p) log2(1-p)`, measured in bits.
+- **Brier over time versus a calibrated-reference benchmark:** actual mean
+  Brier compared with mean `p(1-p)` calculated on the same observations. This
+  is a diagnostic reference, not a direct measure of calibration error.
+
+All diagnostics share the office, date/horizon, pre-snapshot volume and matched
+cohort filters. The confidence-bin visibility threshold does *not* change
+the observations used in these summaries. Different horizons can have
+different sample composition; for direct time comparisons turn on Matched cohort.
+
+The provider selector keeps **Kalshi and Polymarket strictly separate**.
+The Polymarket pilot includes two overlapping resolved 2026 primary contests:
+Florida Republican governor and Michigan Democratic Senate nomination.
+Polymarket's historical YES-token CLOB prices are *not* the same statistic as
+Kalshi's historical YES bid/ask midpoints. The Polymarket pilot does not contain
+comparable seven-day historical contract volumes, so those filters are disabled.
+It is not a representative sample for ranking platforms.
+
+See [`docs/providers-and-sharpness.md`](docs/providers-and-sharpness.md)
+for the matching, candidate-universe, sample dependence and scoring cautions.
+
 ## Interactive data controls
 
 **Refresh data** re-fetches the currently selected study's published JSON dataset
