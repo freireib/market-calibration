@@ -39,7 +39,7 @@ function estimateProbabilityKDE(rows,method,bandwidth,steps=240) {
   }
   // Correct the small finite-grid truncation/numerical-integration error.
   const area=density.reduce((sum,point,i)=>{
-    return sum+point.y*(i===0||i===steps?.5:1);
+    return sum+point.y*((i===0||i===steps)?0.5:1);
   },0)/steps;
   if(area>0) density.forEach(point=>{point.y/=area;});
   return density;
