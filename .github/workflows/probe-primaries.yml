@@ -1,0 +1,36 @@
+name: Probe 2026 primary archive
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-primaries.yml'
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check primary event and historical market responses
+        run: |
+          python - <<'PY'
+          import sys,json,urllib.error
+          sys.path.insert(0,'scripts')
+          from collect_kalshi import api_get
+          for series in ["KXGOVFLNOMR","KXSENATEMID","KXSENATETXR","KXGOVWINOMD","KXSENATETXD","KXSENATEMED","KXSENATEMAD","KXSENATEILD","KXGOVOHNOMR"]:
+            ticker=series+"-26"
+            for path in ["/events/"+ticker]:
+              try:
+                x=api_get(path)
+                markets=x.get('markets') or []
+                event=x.get('event') or {}
+                print("EVENT",ticker,json.dumps({"count":len(markets),"date":event.get('strike_date'),"fields":list(event)[:15],"market0":{k:markets[0].get(k) for k in ('ticker','title','yes_sub_title','status','result','close_time','settlement_ts','expiration_time','rules_primary')} if markets else {}})[:1300])
+                if markets:
+                  for m in markets:
+                    if str(m.get('result','')).lower()=='yes':
+                      print("WINNER",ticker,m.get('ticker'),m.get('yes_sub_title'),m.get('result'))
+              except Exception as e:print("EVENT_ERROR",ticker,repr(e))
+          for path in ['/historical/cutoff','/historical/markets']:
+            try:
+              d=api_get(path, {'limit':2} if path.endswith('markets') else None)
+              print("ARCHIVE",path,json.dumps(d)[:600])
+            except Exception as e:print("ARCHIVE_ERROR",path,repr(e))
+          PY
