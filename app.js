@@ -3,6 +3,7 @@
 const HORIZONS = [
   {id:'two_months', label:'2 months', color:'#477ab4'},
   {id:'one_month', label:'1 month', color:'#bc8033'},
+  {id:'one_week', label:'1 week', color:'#9b65a4'},
   {id:'one_day', label:'1 day', color:'#168a83'}
 ];
 const NS = 'http://www.w3.org/2000/svg';
@@ -35,6 +36,9 @@ function ingest(raw) {
     if (vol !== null && (!Number.isFinite(vol) || vol < 0)) throw new Error('Invalid volume at row '+(i+1));
     const clean = {
       provider:String(row.provider), event_id:String(row.event_id),
+      contest_id:String(row.contest_id || row.event_id),
+      candidate:String(row.candidate || ''), primary_date:String(row.primary_date || ''),
+      quote_status:String(row.quote_status || ''),
       label:String(row.label || row.event_id), category:String(row.category || 'Other'),
       horizon:row.horizon, snapshot_utc:String(row.snapshot_utc || ''),
       probability:prob, outcome:out, volume_7d:vol,
@@ -88,7 +92,8 @@ function eligibleRows(sel, scoredOnly=true) {
         const k=keyOf(r); if (!mask.has(k)) mask.set(k,new Set()); mask.get(k).add(r.horizon);
       }
     });
-    rows = rows.filter(r => (mask.get(keyOf(r))?.size || 0) === HORIZONS.length);
+    rows = rows.filter(r => [...sel.horizons].every(h => mask.get(keyOf(r))?.has(h)));
+    // Disabled horizons must not constrain the matched sample.
   }
   return rows;
 }
@@ -177,16 +182,18 @@ function plot(grouped, sel) {
     const line=document.createElement('span');line.className='legend-line';line.style.background=h.color;
     item.append(line,document.createTextNode(h.label));legend.append(item);
   });
-  byId('chart-note').textContent=sel.weight==='equal'
-    ? 'Each dot is an independently aggregated probability bin (not a continuous curve). n labels appear when one horizon is selected. Vertical bars are approximate 95% Wilson intervals; circles scale with race count. Small n makes apparent miscalibration hard to interpret.'
-    : 'Dots are separate probability bins; volume-weighted observations use the prior seven days. Intervals use approximate effective sample size and are not robust to correlation among races.';
+  const primary=getValue('study')==='primaries_2026';
+  byId('chart-note').textContent=(sel.weight==='equal'
+    ? 'Dots are separate probability bins. Vertical bars are approximate 95% Wilson intervals and circles scale with contract count. Small samples warrant caution.'
+    : 'Dots are separate probability bins; prior 7-day volume determines weighting and approximate effective sample sizes.')
+    +(primary?' Candidate contracts within the same primary are correlated, so nominal intervals may be too narrow.':'');
 }
 function renderCalibrationBins(rows, sel) {
   const parent=byId('calibration-bins');
   parent.replaceChildren();
   const table=document.createElement('table');
   const head=document.createElement('thead'), hr=document.createElement('tr');
-  ['Horizon','Forecast bin','Races (n)','Mean forecast','Observed YES','Within-bin Brier','Share of total loss'].forEach(t=>{
+  ['Horizon','Forecast bin','Contracts (n)','Mean forecast','Observed YES','Within-bin Brier','Share of total loss'].forEach(t=>{
     const th=document.createElement('th');th.textContent=t;hr.append(th);
   });
   head.append(hr);table.append(head);
@@ -216,7 +223,7 @@ function renderScores(rows,sel) {
   const parent=byId('scores');parent.replaceChildren();
   const table=document.createElement('table');
   const head=document.createElement('thead');const hr=document.createElement('tr');
-  ['Horizon','Scored races','Mean Brier','Mean probability','Mean outcome'].forEach(t=>{const th=document.createElement('th');th.textContent=t;hr.append(th);});
+  ['Horizon','Scored forecasts','Mean Brier','Mean probability','Mean outcome'].forEach(t=>{const th=document.createElement('th');th.textContent=t;hr.append(th);});
   head.append(hr);table.append(head);
   const body=document.createElement('tbody');
   for(const h of HORIZONS) {
@@ -233,9 +240,11 @@ function renderCalibration() {
   const sel=selection(),rows=eligibleRows(sel,true);
   const positives=rows.filter(r=>weightOf(r,sel.weight)>0),scores=scoreRows(positives,sel.weight);
   const summary=byId('summary');summary.replaceChildren();
-  summary.append(metric('Resolved events',String(scores.nEvents),'Unique markets across horizons'));
-  summary.append(metric('Scored forecasts',String(scores.n),'One observation per market and horizon'));
-  summary.append(metric('Mean Brier',fmt(scores.brier),'Lower is better · 0 is perfect'));
+  const primary=getValue('study')==='primaries_2026';
+  const contestCount=new Set(positives.map(r=>r.contest_id)).size;
+  summary.append(metric(primary?'Primary contests':'Resolved events',String(contestCount),primary?'Distinct nomination contests':'Unique races across selected horizons'));
+  summary.append(metric(primary?'Candidate forecasts':'Scored forecasts',String(scores.n),primary?'Binary candidate contracts × horizons':'One forecast per race and horizon'));
+  summary.append(metric('Mean Brier',fmt(scores.brier),primary?'Binary score per candidate contract':'Lower is better · 0 is perfect'));
   const grouped=new Map();
   HORIZONS.forEach(h=>grouped.set(h.id,binRows(rows.filter(r=>r.horizon===h.id),sel.weight)));
   plot(grouped,sel);renderCalibrationBins(rows,sel);renderScores(rows,sel);
@@ -253,7 +262,7 @@ function renderMarkets() {
   const rows=visibleMarketRows(),root=byId('market-table');root.replaceChildren();
   if(!rows.length){root.textContent='No matching market observations. Add the dataset or change the filters.';return;}
   const table=document.createElement('table'),head=document.createElement('thead'),hr=document.createElement('tr');
-  ['Race','Source','Office','Horizon','P(D)','Outcome','7d volume','Brier','Status'].forEach(s=>{const th=document.createElement('th');th.textContent=s;hr.append(th);});
+  ['Race / candidate','Source','Office','Horizon','YES probability','Outcome','7d volume','Brier','Status'].forEach(s=>{const th=document.createElement('th');th.textContent=s;hr.append(th);});
   head.append(hr);table.append(head);
   const body=document.createElement('tbody');
   for(const r of rows.slice(0,700)) {
@@ -269,7 +278,7 @@ function renderMarkets() {
   if(rows.length>700){const p=document.createElement('p');p.textContent='Showing 700 of '+rows.length+' rows. CSV export includes all matching rows.';root.append(p);}
 }
 function exportCsv() {
-  const cols=['provider','event_id','label','category','horizon','snapshot_utc','probability','outcome','volume_7d','spread','outcome_status','outcome_source','market_ticker'];
+  const cols=['provider','event_id','contest_id','candidate','primary_date','label','category','horizon','snapshot_utc','probability','outcome','volume_7d','spread','quote_status','outcome_status','outcome_source','market_ticker'];
   const lines=[cols.map(escapeCSV).join(',')];
   visibleMarketRows().forEach(r=>lines.push(cols.map(k=>escapeCSV(r[k])).join(',')));
   const blob=new Blob([lines.join('\r\n')+'\r\n'],{type:'text/csv;charset=utf-8;'});
@@ -283,13 +292,18 @@ function render() {
   box.textContent=count
     ? 'Dataset loaded: '+records.length+' observations, '+count+' scored forecasts. Source: '+(dataset.source||'local JSON')+'.'
     : 'No resolved historical forecasts loaded yet. The app is ready for data; the repository dataset is empty. You can import JSON under Methods & data.';
+  const primary=getValue('study')==='primaries_2026';
+  byId('study-intro').textContent=primary
+    ? 'Candidate-level YES forecasts at one day, one week, one month, and two months before each primary or runoff. Contracts within a race are correlated; this is an exploratory binary-contract analysis.'
+    : 'Compare Democratic-win forecasts from the same dates before the November 3 general election. Unresolved events are excluded from scores.';
   byId('data-provenance').textContent='Source: '+(dataset.source||'not yet specified')+
     ' | Updated: '+(dataset.generated_at||'not yet populated')+' | Records: '+records.length;
   renderCalibration();renderMarkets();
 }
 async function loadRepository() {
   try{
-    const response=await fetch('./data/observations.json?cache='+Date.now(),{cache:'no-store'});
+    const file=getValue('study')==='primaries_2026'?'primaries_2026.json':'observations.json';
+    const response=await fetch('./data/'+file+'?cache='+Date.now(),{cache:'no-store'});
     if(!response.ok)throw new Error('HTTP '+response.status);
     ingest(await response.json());render();
   }catch(err){const box=byId('dataset-status');box.dataset.state='error';box.textContent='Could not load repository dataset: '+err.message+'. Try serving this folder via a local web server.';}
@@ -299,6 +313,15 @@ document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===tab.dataset.view));
 }));
 document.querySelectorAll('.controls input,.controls select,#search-markets').forEach(e=>e.addEventListener('input',render));
+byId('study').addEventListener('change',()=>{
+  const primary=getValue('study')==='primaries_2026';
+  const week=byId('week-horizon-container');
+  week.hidden=!primary;
+  const dayLabels=document.querySelectorAll('input[name="horizon"]');
+  dayLabels.forEach(x=>{x.checked=primary||x.value!=='one_week';});
+  byId('matched').checked=true;
+  loadRepository();
+});
 byId('export-csv').addEventListener('click',exportCsv);
 byId('reset-data').addEventListener('click',loadRepository);
 byId('data-file').addEventListener('change',async e=>{
