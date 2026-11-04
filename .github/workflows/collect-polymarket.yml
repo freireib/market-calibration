@@ -1,0 +1,50 @@
+name: Collect Polymarket primary pilot
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/collect-polymarket.yml'
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test Polymarket collector
+        run: python scripts/collect_polymarket.py --self-test
+      - name: Collect two overlapping primary election events
+        run: python scripts/collect_polymarket.py
+      - name: Validate separate Polymarket outcomes
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("data/polymarket_primaries_2026_pilot.json"))
+          r=d["records"]
+          assert r and len(set(x["contest_id"] for x in r)) == 2
+          assert all(x["provider"]=="Polymarket" for x in r)
+          assert all(x["volume_7d"] is None for x in r)
+          assert all(x["outcome"] in (0,1) for x in r)
+          scored=[x for x in r if x["probability"] is not None]
+          assert len(scored)>0
+          print("POLY_VALIDATED",len(r),"SCORED",len(scored))
+          for h in ("two_months","one_month","one_week","one_day"):
+            x=[a for a in scored if a["horizon"]==h]
+            print("POLY_HORIZON",h,"N",len(x),
+              "BRIER",sum((a["probability"]-a["outcome"])**2 for a in x)/len(x) if x else None)
+          PY
+      - name: Publish separate Polymarket pilot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/polymarket_primaries_2026_pilot.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Polymarket primary pilot"
+            git fetch origin main
+            git rebase origin/main
+            git push
+          fi
