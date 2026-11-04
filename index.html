@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#132c37">
   <meta name="description" content="A reproducible look at how accurately prediction markets forecast events.">
   <title>Market Calibration</title>
-  <link rel="stylesheet" href="./style.css?v=1">
+  <link rel="stylesheet" href="./style.css?v=3">
 </head>
 <body>
   <div class="app-shell">
@@ -22,15 +22,21 @@
     </nav>
     <main>
       <section class="view active" id="calibration" aria-label="Calibration analysis">
-        <p class="eyebrow">2026 US MIDTERMS · INITIAL STUDY</p>
+        <div class="study-bar"><label for="study">Study</label>
+          <select id="study" aria-label="Election dataset">
+            <option value="general_2026">2026 General Election</option>
+            <option value="primaries_2026" selected>2026 Primaries</option>
+          </select></div>
+        <p class="eyebrow">HISTORICAL FORECAST ACCURACY · 2026</p>
         <h1>Were the odds right?</h1>
-        <p class="intro">Compare forecasts taken at equal time horizons before Election Day. Resolved outcomes only; no election leads treated as winners.</p>
+        <p class="intro" id="study-intro">Candidate-level YES forecasts at one day, one week, one month, and two months before each primary or runoff.</p>
         <div id="dataset-status" class="notice" role="status">Loading dataset…</div>
         <div class="summary" id="summary"></div>
         <div class="controls">
           <fieldset><legend>Horizon</legend>
             <label><input type="checkbox" name="horizon" value="two_months" checked> 2 months</label>
             <label><input type="checkbox" name="horizon" value="one_month" checked> 1 month</label>
+            <label id="week-horizon-container"><input type="checkbox" name="horizon" value="one_week" checked> 1 week</label>
             <label><input type="checkbox" name="horizon" value="one_day" checked> 1 day</label>
           </fieldset>
           <label class="field">Office
@@ -81,10 +87,12 @@
       <section class="view" id="methods" aria-label="Methodology and data">
         <p class="eyebrow">REPRODUCIBILITY</p><h1>Methods & data.</h1>
         <div class="method">
+          <h2>Which study is selected?</h2>
+          <p>The <strong>2026 Primaries</strong> study uses each candidate's individual YES contract. A primary with ten candidate contracts contributes ten binary events per horizon, not ten independent elections. The displayed mean Brier and reliability diagrams are contract-level diagnostics; a complete multicategory event Brier score needs a separate normalization and event-level analysis. The <strong>2026 General Election</strong> study treats each race as one binary Democratic-win event.</p>
           <h2>What is scored?</h2>
-          <p>Each row represents a specific binary event at a fixed time before the outcome. A Brier loss is (probability − outcome)², where outcome is 0 or 1. Only called, certified, or settled outcomes are eligible; an uncalled race is never scored.</p>
+          <p>Each row represents a specific binary contract at a fixed time before the outcome. A Brier loss is (probability − outcome)², where outcome is 0 or 1. Only called, certified, or settled outcomes are eligible; an uncalled race is never scored.</p>
           <h2>Isochronic snapshots</h2>
-          <p>The initial 2026 study uses September 3, October 3, and November 2 at 3:00 p.m. Eastern. These are two calendar months, one calendar month, and one day before the November 3 election. Quote timestamps must be at or before each snapshot.</p>
+          <p>The general-election study uses September 3, October 3, and November 2 at 3:00 p.m. Eastern before November 3. Primary forecasts use two calendar months, one calendar month, seven days, and one day before each contest's actual election or runoff date, at 3 p.m. Eastern. Quotes must precede their respective cutoff.</p>
           <h2>Calibration bins and uncertainty</h2>
           <p>Forecasts are grouped in 0.10-wide probability bins. Each point is the (possibly weighted) mean forecast and observed win rate. Vertical intervals are approximate 95% Wilson intervals, using Kish effective sample size when weighted. Correlated election outcomes can make those intervals too narrow.</p>
           <h2>Volume</h2>
@@ -101,6 +109,6 @@
     </main>
     <footer>Experimental research tool · Not trading advice · No simulated election results are displayed.</footer>
   </div>
-  <script src="./app.js?v=2" defer></script>
+  <script src="./app.js?v=3" defer></script>
 </body>
 </html>
