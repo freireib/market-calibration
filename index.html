@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#132c37">
   <meta name="description" content="A reproducible look at how accurately prediction markets forecast events.">
   <title>Market Calibration</title>
-  <link rel="stylesheet" href="./style.css?v=7">
+  <link rel="stylesheet" href="./style.css?v=8">
 </head>
 <body>
   <div class="app-shell">
@@ -26,7 +26,14 @@
           <select id="study" aria-label="Election dataset">
             <option value="general_2026">2026 General Election</option>
             <option value="primaries_2026" selected>2026 Primaries</option>
-          </select></div>
+          </select>
+          <label for="provider">Provider</label>
+          <select id="provider" aria-label="Prediction-market provider">
+            <option value="Kalshi" selected>Kalshi</option>
+            <option value="Polymarket">Polymarket (pilot)</option>
+          </select>
+        </div>
+        <p id="provider-note" class="caption provider-note" hidden>Polymarket pilot: two completed primary contests only. Historical trade prices differ from Kalshi bid/ask midpoints; seven-day historical volume is not available. Results are kept separate, not pooled or directly ranked.</p>
         <p class="eyebrow">HISTORICAL FORECAST ACCURACY · 2026</p>
         <h1>Were the odds right?</h1>
         <p class="intro" id="study-intro">Candidate-level YES forecasts at one day, one week, one month, and two months before each primary or runoff.</p>
@@ -130,6 +137,8 @@
       <section class="view" id="methods" aria-label="Methodology and data">
         <p class="eyebrow">REPRODUCIBILITY</p><h1>Methods & data.</h1>
         <div class="method">
+          <h2>Separate provider analysis</h2>
+          <p>Polymarket data are currently a two-contest pilot. Markets have different contract universes, historical price measures, liquidity, and resolution rules. The app will never pool Kalshi and Polymarket by default. A future head-to-head comparison should use a manually audited intersection of the <em>same outcome contracts</em> at identical forecast timestamps, with matched inclusion rules. Polymarket historical seven-day contract volumes have not yet been collected, so volume-weighted settings are disabled for that provider.</p>
           <h2>Which study is selected?</h2>
           <p>The <strong>2026 Primaries</strong> study uses each candidate's individual YES contract. A primary with ten candidate contracts contributes ten binary events per horizon, not ten independent elections. The displayed mean Brier and reliability diagrams are contract-level diagnostics; a complete multicategory event Brier score needs a separate normalization and event-level analysis. The <strong>2026 General Election</strong> study treats each race as one binary Democratic-win event.</p>
           <h2>What is scored?</h2>
@@ -156,7 +165,7 @@
     </main>
     <footer>Experimental research tool · Not trading advice · No simulated election results are displayed.</footer>
   </div>
-  <script src="./app.js?v=7" defer></script>
+  <script src="./app.js?v=8" defer></script>
   <script src="./evolution.js?v=2" defer></script>
 </body>
 </html>
