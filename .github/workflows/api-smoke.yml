@@ -42,3 +42,23 @@ jobs:
               print("EVENTS",series,json.dumps([{"event_ticker":e.get("event_ticker"),"title":e.get("title")} for e in events]))
             except Exception as e: print("EVENTS_ERROR",series,repr(e))
           PY
+
+      - name: Probe candidate market discovery and called race API
+        run: |
+          python - <<'PY'
+          import json,sys,urllib.request
+          sys.path.insert(0,'scripts')
+          from collect_kalshi import api_get
+          for event in ['SENATETX-26','SENATEIL-26','GOVPARTYMI-26','GOVPARTYTX-26','HOUSEPA07-26','HOUSECA22-26']:
+              try:
+                  e=api_get('/events/'+event)
+                  m=e.get('markets',[]) or e.get('event',{}).get('markets',[])
+                  print('DISCOVER',event,repr([(x.get('ticker'),x.get('status'),x.get('result')) for x in m[:5]]))
+              except Exception as ex:print('DISCOVER_ERROR',event,str(ex)[:130])
+          for office in ['senate','house','governors']:
+              try:
+                  url='https://watch.vote/api/elections/2026/results?office='+office
+                  response=json.load(urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'MarketCalibration/0.1'}),timeout=15))
+                  print('WATCH',office,type(response).__name__,(json.dumps(response)[:1800] if office=='senate' else json.dumps(response)[:600]))
+              except Exception as ex:print('WATCH_ERROR',office,repr(ex))
+          PY
