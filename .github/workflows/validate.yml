@@ -24,3 +24,5 @@ jobs:
           python3 -m json.tool data/observations.json > /dev/null
           python3 -m json.tool data/markets.json > /dev/null
           python3 -m json.tool data/primaries_2026.json > /dev/null
+          python3 -m json.tool data/polymarket_primaries_2026_pilot.json > /dev/null
+          python3 -m json.tool data/polymarket_primary_events.json > /dev/null
