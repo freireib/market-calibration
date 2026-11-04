@@ -1,10 +1,586 @@
 [
   {
     "provider": "Kalshi",
-    "event_id": "US-HOUSE-CA-22-2026",
-    "label": "California 22nd · U.S. House",
+    "event_id": "2026-govpartyal",
+    "label": "AL \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYAL",
+    "ticker": "GOVPARTYAL-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyar",
+    "label": "AR \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYAR",
+    "ticker": "GOVPARTYAR-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyaz",
+    "label": "AZ \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYAZ",
+    "ticker": "GOVPARTYAZ-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyca",
+    "label": "CA \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYCA",
+    "ticker": "GOVPARTYCA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyco",
+    "label": "CO \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYCO",
+    "ticker": "GOVPARTYCO-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyct",
+    "label": "CT \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYCT",
+    "ticker": "GOVPARTYCT-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyfl",
+    "label": "FL \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYFL",
+    "ticker": "GOVPARTYFL-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyga",
+    "label": "GA \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYGA",
+    "ticker": "GOVPARTYGA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyhi",
+    "label": "HI \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYHI",
+    "ticker": "GOVPARTYHI-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyia",
+    "label": "IA \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYIA",
+    "ticker": "GOVPARTYIA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyid",
+    "label": "ID \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYID",
+    "ticker": "GOVPARTYID-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyil",
+    "label": "IL \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYIL",
+    "ticker": "GOVPARTYIL-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyma",
+    "label": "MA \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYMA",
+    "ticker": "GOVPARTYMA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartymd",
+    "label": "MD \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYMD",
+    "ticker": "GOVPARTYMD-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyme",
+    "label": "ME \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYME",
+    "ticker": "GOVPARTYME-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartymi",
+    "label": "MI \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYMI",
+    "ticker": "GOVPARTYMI-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartymn",
+    "label": "MN \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYMN",
+    "ticker": "GOVPARTYMN-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyne",
+    "label": "NE \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYNE",
+    "ticker": "GOVPARTYNE-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartynm",
+    "label": "NM \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYNM",
+    "ticker": "GOVPARTYNM-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartynv",
+    "label": "NV \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYNV",
+    "ticker": "GOVPARTYNV-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyny",
+    "label": "NY \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYNY",
+    "ticker": "GOVPARTYNY-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyoh",
+    "label": "OH \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYOH",
+    "ticker": "GOVPARTYOH-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyok",
+    "label": "OK \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYOK",
+    "ticker": "GOVPARTYOK-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyor",
+    "label": "OR \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYOR",
+    "ticker": "GOVPARTYOR-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartypa",
+    "label": "PA \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYPA",
+    "ticker": "GOVPARTYPA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyri",
+    "label": "RI \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYRI",
+    "ticker": "GOVPARTYRI-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartysc",
+    "label": "SC \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYSC",
+    "ticker": "GOVPARTYSC-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartysd",
+    "label": "SD \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYSD",
+    "ticker": "GOVPARTYSD-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartytn",
+    "label": "TN \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYTN",
+    "ticker": "GOVPARTYTN-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartytx",
+    "label": "TX \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYTX",
+    "ticker": "GOVPARTYTX-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartyvt",
+    "label": "VT \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYVT",
+    "ticker": "GOVPARTYVT-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartywi",
+    "label": "WI \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYWI",
+    "ticker": "GOVPARTYWI-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-govpartywy",
+    "label": "WY \u00b7 Governor",
+    "category": "Governor",
+    "series": "GOVPARTYWY",
+    "ticker": "GOVPARTYWY-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseca13",
+    "label": "CA-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSECA13",
+    "ticker": "HOUSECA13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseca22",
+    "label": "CA-22 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSECA22",
     "ticker": "HOUSECA22-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseca27",
+    "label": "CA-27 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSECA27",
+    "ticker": "HOUSECA27-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseca41",
+    "label": "CA-41 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSECA41",
+    "ticker": "HOUSECA41-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseil17",
+    "label": "IL-17 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSEIL17",
+    "ticker": "HOUSEIL17-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-houseny17",
+    "label": "NY-17 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSENY17",
+    "ticker": "HOUSENY17-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-housepa10",
+    "label": "PA-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSEPA10",
+    "ticker": "HOUSEPA10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-housetx15",
+    "label": "TX-15 \u00b7 U.S. House",
+    "category": "House",
+    "series": "HOUSETX15",
+    "ticker": "HOUSETX15-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateak",
+    "label": "AK \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEAK",
+    "ticker": "SENATEAK-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateal",
+    "label": "AL \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEAL",
+    "ticker": "SENATEAL-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatear",
+    "label": "AR \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEAR",
+    "ticker": "SENATEAR-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateco",
+    "label": "CO \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATECO",
+    "ticker": "SENATECO-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatede",
+    "label": "DE \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEDE",
+    "ticker": "SENATEDE-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatega",
+    "label": "GA \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEGA",
+    "ticker": "SENATEGA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateia",
+    "label": "IA \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEIA",
+    "ticker": "SENATEIA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateid",
+    "label": "ID \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEID",
+    "ticker": "SENATEID-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateil",
+    "label": "IL \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEIL",
+    "ticker": "SENATEIL-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateks",
+    "label": "KS \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEKS",
+    "ticker": "SENATEKS-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatela",
+    "label": "LA \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATELA",
+    "ticker": "SENATELA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatema",
+    "label": "MA \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEMA",
+    "ticker": "SENATEMA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateme",
+    "label": "ME \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEME",
+    "ticker": "SENATEME-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatemi",
+    "label": "MI \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEMI",
+    "ticker": "SENATEMI-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatemn",
+    "label": "MN \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEMN",
+    "ticker": "SENATEMN-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatems",
+    "label": "MS \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEMS",
+    "ticker": "SENATEMS-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatemt",
+    "label": "MT \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEMT",
+    "ticker": "SENATEMT-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatenc",
+    "label": "NC \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATENC",
+    "ticker": "SENATENC-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatene",
+    "label": "NE \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATENE",
+    "ticker": "SENATENE-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatenh",
+    "label": "NH \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATENH",
+    "ticker": "SENATENH-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatenj",
+    "label": "NJ \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATENJ",
+    "ticker": "SENATENJ-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatenm",
+    "label": "NM \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATENM",
+    "ticker": "SENATENM-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateok",
+    "label": "OK \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEOK",
+    "ticker": "SENATEOK-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateor",
+    "label": "OR \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEOR",
+    "ticker": "SENATEOR-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateri",
+    "label": "RI \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATERI",
+    "ticker": "SENATERI-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatesc",
+    "label": "SC \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATESC",
+    "ticker": "SENATESC-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatesd",
+    "label": "SD \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATESD",
+    "ticker": "SENATESD-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatetn",
+    "label": "TN \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATETN",
+    "ticker": "SENATETN-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatetx",
+    "label": "TX \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATETX",
+    "ticker": "SENATETX-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senateva",
+    "label": "VA \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEVA",
+    "ticker": "SENATEVA-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatewv",
+    "label": "WV \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEWV",
+    "ticker": "SENATEWV-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-senatewy",
+    "label": "WY \u00b7 U.S. Senate",
+    "category": "Senate",
+    "series": "SENATEWY",
+    "ticker": "SENATEWY-26-D"
   }
 ]
