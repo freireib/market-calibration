@@ -26,6 +26,17 @@ jobs:
               print("EVENT",slug,json.dumps({"id":event.get("id"),"title":event.get("title"),"closed":event.get("closed"),"numMarkets":len(event.get("markets",[])),"startDate":event.get("startDate"),"endDate":event.get("endDate")}))
               for m in event.get("markets",[])[:3]:
                 print("MARKET",slug,json.dumps({k:m.get(k) for k in ("id","question","outcomes","outcomePrices","clobTokenIds","closed","resolved","endDate","conditionId","umaResolutionStatus","volume")})[:1400])
+              ms=event.get("markets",[])
+              counts={"resolved":sum(str(m.get("umaResolutionStatus","")).lower()=="resolved" for m in ms),"yes":0,"no":0,"unknown":0}
+              for mm in ms:
+                ps=mm.get("outcomePrices")
+                if isinstance(ps,str):
+                  try:ps=json.loads(ps)
+                  except Exception:ps=[]
+                if len(ps)>=2 and ps[0] in ("1","1.0") and ps[1] in ("0","0.0"):counts["yes"]+=1
+                elif len(ps)>=2 and ps[0] in ("0","0.0") and ps[1] in ("1","1.0"):counts["no"]+=1
+                else:counts["unknown"]+=1
+              print("SETTLEMENTS",slug,counts)
               m=next((m for m in event.get("markets",[]) if m.get("clobTokenIds")),None)
               if not m:continue
               ids=m.get("clobTokenIds")
