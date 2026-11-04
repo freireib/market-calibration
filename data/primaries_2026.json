@@ -2,7 +2,7 @@
   "schema_version": 1,
   "study_id": "primaries_2026",
   "study_label": "2026 U.S. Primaries",
-  "generated_at": "2026-11-04T05:57:15.015634+00:00",
+  "generated_at": "2026-11-04T13:09:22.388779+00:00",
   "source": "Kalshi official historic/live candlesticks and finalized candidate contract results",
   "sample": "Curated 2026 nomination event catalog; multiple correlated candidate contracts per primary",
   "statistics": {
