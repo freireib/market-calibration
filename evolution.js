@@ -17,6 +17,7 @@ function horizonDiagnostics(rows,sel) {
       ...h, rows:a, n:a.length,
       entropy:weightedMean(a,r=>entropyBits(r.probability),sel.weight),
       brier:weightedMean(a,r=>(r.probability-r.outcome)**2,sel.weight),
+      calibratedBrier:weightedMean(a,r=>r.probability*(1-r.probability),sel.weight),
       mid:weightedMean(a,r=>r.probability>=.25&&r.probability<=.75?1:0,sel.weight),
       extreme:weightedMean(a,r=>r.probability<.1||r.probability>.9?1:0,sel.weight)
     };
@@ -83,26 +84,44 @@ function drawHorizonTrend(id,items,metric,title,yCap,color) {
     root.append(svg('text',{x:x(i),y:Math.max(14,y(item[metric])-12),'text-anchor':'middle',fill:color,'font-size':11,'font-weight':650},fmt(item[metric])));
   });
 }
+function overlayCalibrationBenchmark(items,max) {
+  const root=byId('brier-trend');
+  const l=60,r=650,t=28,b=205;
+  const x=i=>l+40+(r-l-80)*(i+.5)/items.length,y=v=>b-(b-t)*v/max;
+  const rows=items.map((item,i)=>({...item,index:i})).filter(item=>item.n&&Number.isFinite(item.calibratedBrier));
+  if(rows.length>1)root.append(svg('polyline',{
+    points:rows.map(item=>x(item.index)+','+y(item.calibratedBrier)).join(' '),
+    stroke:'#4977ac','stroke-dasharray':'5,4','stroke-width':2.2,fill:'none'
+  }));
+  rows.forEach(item=>{
+    const circle=svg('circle',{cx:x(item.index),cy:y(item.calibratedBrier),r:4,fill:'#4977ac',stroke:'white'});
+    circle.append(svg('title',{},item.label+' calibrated forecast benchmark: '+fmt(item.calibratedBrier)));
+    root.append(circle);
+  });
+}
+
 function renderEvolution(rows,sel) {
   const items=horizonDiagnostics(rows,sel);
   drawProbabilityDistribution(items,sel);
   drawHorizonTrend('entropy-trend',items,'entropy','binary entropy',1,'#168a83');
-  drawHorizonTrend('brier-trend',items,'brier','Brier score',null,'#b47737');
+  const maxBrier=Math.max(.1,Math.ceil(Math.max(0,...items.flatMap(x=>[x.brier,x.calibratedBrier]).filter(Number.isFinite))*10)/10);
+  drawHorizonTrend('brier-trend',items,'brier','Brier score',maxBrier,'#b47737');
+  overlayCalibrationBenchmark(items,maxBrier);
   const parent=byId('evolution-table');parent.replaceChildren();
   const table=document.createElement('table');
   const head=document.createElement('tr');
-  ['Horizon','N','Mean entropy (bits)','Middle 25–75%','Extreme (<10%, >90%)','Brier'].forEach(t=>{
+  ['Horizon','N','Mean entropy (bits)','Middle 25–75%','Extreme (<10%, >90%)','Brier','Calibrated benchmark'].forEach(t=>{
     const th=document.createElement('th');th.textContent=t;head.append(th);
   });
   const thead=document.createElement('thead');thead.append(head);table.append(thead);
   const body=document.createElement('tbody');
   items.forEach(item=>{
     const tr=document.createElement('tr');
-    [item.label,String(item.n),fmt(item.entropy),pct(item.mid),pct(item.extreme),fmt(item.brier)].forEach((v,i)=>tr.append(td(v,i?'num':'')));
+    [item.label,String(item.n),fmt(item.entropy),pct(item.mid),pct(item.extreme),fmt(item.brier),fmt(item.calibratedBrier)].forEach((v,i)=>tr.append(td(v,i?'num':'')));
     body.append(tr);
   });
   table.append(body);parent.append(table);
   byId('evolution-note').textContent='All results use the current office, horizon, volume and cohort filters.'
     +(sel.matched?' Matched cohort selected.':' Forecast counts differ by horizon; trends may reflect changing sample composition.')
-    +' Minimum calibration-bin count is a display-only setting.';
+    +' The dashed benchmark is the expected Brier under calibrated forecasts, mean p(1−p); it is not a formal calibration-error decomposition. Minimum calibration-bin count is display-only.';
 }
