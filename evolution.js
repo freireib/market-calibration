@@ -3,13 +3,6 @@
 function entropyBits(p) {
   return p===0||p===1 ? 0 : -p*Math.log2(p)-(1-p)*Math.log2(1-p);
 }
-const PROB_RANGES=[
-  {name:'0–10%',color:'#315f77',contains:p=>p<.1},
-  {name:'10–25%',color:'#87abbc',contains:p=>p>=.1&&p<.25},
-  {name:'25–75%',color:'#e5b168',contains:p=>p>=.25&&p<=.75},
-  {name:'75–90%',color:'#84aaa5',contains:p=>p>.75&&p<=.9},
-  {name:'90–100%',color:'#18877f',contains:p=>p>.9}
-];
 function horizonDiagnostics(rows,sel) {
   return HORIZONS.filter(h=>sel.horizons.has(h.id)).map(h=>{
     const a=rows.filter(r=>r.horizon===h.id&&weightOf(r,sel.weight)>0);
@@ -23,40 +16,87 @@ function horizonDiagnostics(rows,sel) {
     };
   });
 }
-function drawProbabilityDistribution(items,sel) {
-  const root=byId('probability-distribution');
-  root.replaceChildren();
-  const l=64,t=24,b=260,w=600,h=b-t;
-  for(let i=0;i<=4;i++){
-    const y=b-h*i/4;
-    root.append(svg('line',{x1:l,y1:y,x2:l+w,y2:y,stroke:'#dde8eb'}));
-    root.append(svg('text',{x:l-8,y:y+4,'text-anchor':'end',fill:'#60737c','font-size':12},i*25+'%'));
+// Gaussian KDE with reflections at 0 and 1. The density is per unit
+// probability, normalized over [0,1], not a probability at a single point.
+function estimateProbabilityKDE(rows,method,bandwidth,steps=240) {
+  if(!(bandwidth>0&&bandwidth<=.5)||!Number.isInteger(steps)||steps<2)
+    throw new Error('Invalid KDE bandwidth or resolution');
+  const samples=rows.filter(r=>validP(r.probability)&&weightOf(r,method)>0);
+  const totalWeight=samples.reduce((s,r)=>s+weightOf(r,method),0);
+  if(!totalWeight)return [];
+  const invH=1/bandwidth;
+  const coefficient=1/(Math.sqrt(2*Math.PI)*bandwidth*totalWeight);
+  const density=[];
+  for(let i=0;i<=steps;i++){
+    const x=i/steps;
+    let total=0;
+    for(const r of samples){
+      const p=r.probability,w=weightOf(r,method);
+      const a=(x-p)*invH,b=(x+p)*invH,c=(x-(2-p))*invH;
+      total+=w*(Math.exp(-a*a/2)+Math.exp(-b*b/2)+Math.exp(-c*c/2));
+    }
+    density.push({x,y:total*coefficient});
   }
-  items.forEach((item,i)=>{
-    const x=l+w*(i+.5)/items.length,bar=Math.min(90,w/items.length-25);
-    const sizes=PROB_RANGES.map(bin=>item.rows.reduce((v,r)=>v+(bin.contains(r.probability)?weightOf(r,sel.weight):0),0));
-    const total=sizes.reduce((a,v)=>a+v,0);
-    let previous=0;
-    sizes.forEach((value,j)=>{
-      if(!value||!total)return;
-      const f=value/total,top=b-h*(previous+f);
-      const rect=svg('rect',{x:x-bar/2,y:top,width:bar,height:h*f,fill:PROB_RANGES[j].color});
-      const n=item.rows.filter(r=>PROB_RANGES[j].contains(r.probability)).length;
-      rect.append(svg('title',{},item.label+' / '+PROB_RANGES[j].name+': '+n+' forecasts; weighted share '+pct(f)));
-      root.append(rect);
-      if(f>.12)root.append(svg('text',{x,y:top+h*f/2+4,'text-anchor':'middle',fill:j===0||j===4?'white':'#173140','font-size':11,'pointer-events':'none'},Math.round(f*100)+'%'));
-      previous+=f;
+  // Correct the small finite-grid truncation/numerical-integration error.
+  const area=density.reduce((sum,point,i)=>{
+    return sum+point.y*(i===0||i===steps?.5:1);
+  },0)/steps;
+  if(area>0) density.forEach(point=>{point.y/=area;});
+  return density;
+}
+function densityAxisCeiling(raw) {
+  if(!(raw>0))return 1;
+  const magnitude=Math.pow(10,Math.floor(Math.log10(raw)));
+  const multiplier=[1,2,2.5,5,10].find(k=>k*magnitude>=raw);
+  return (multiplier||10)*magnitude;
+}
+function drawProbabilityDistribution(items,sel) {
+  const root=byId('probability-distribution');root.replaceChildren();
+  const left=76,right=660,top=20,bottom=280;
+  const bandwidth=Number(byId('kde-bandwidth').value)/100;
+  const curves=items.map(item=>({...item,density:estimateProbabilityKDE(item.rows,sel.weight,bandwidth)}));
+  const peak=Math.max(0,...curves.flatMap(c=>c.density.map(p=>p.y)));
+  const upper=densityAxisCeiling(peak*1.05);
+  const xx=p=>left+p*(right-left);
+  const yy=d=>bottom-d/upper*(bottom-top);
+  // Density, unlike observed fraction, can exceed one.
+  for(let i=0;i<=4;i++){
+    const d=upper*i/4,py=yy(d);
+    root.append(svg('line',{x1:left,y1:py,x2:right,y2:py,stroke:'#dde8eb'}));
+    root.append(svg('text',{x:left-10,y:py+4,'text-anchor':'end',fill:'#60737c','font-size':12},d.toFixed(upper<2?2:1)));
+  }
+  for(let i=0;i<=5;i++){
+    const p=i/5,px=xx(p);
+    root.append(svg('line',{x1:px,y1:top,x2:px,y2:bottom,stroke:'#eaf0f1'}));
+    root.append(svg('text',{x:px,y:bottom+22,'text-anchor':'middle',fill:'#60737c','font-size':12},Math.round(p*100)+'%'));
+  }
+  root.append(svg('line',{x1:left,y1:bottom,x2:right,y2:bottom,stroke:'#96aab1'}));
+  root.append(svg('text',{x:(left+right)/2,y:bottom+56,'text-anchor':'middle',fill:'#173140','font-size':14},'Forecast YES probability'));
+  root.append(svg('text',{
+    x:17,y:(top+bottom)/2,transform:'rotate(-90 17 '+((top+bottom)/2)+')',
+    'text-anchor':'middle',fill:'#173140','font-size':13
+  },'Density (per unit probability)'));
+  const legend=byId('distribution-legend');legend.replaceChildren();
+  let visible=0;
+  for(const item of curves){
+    if(!item.density.length)continue;
+    visible++;
+    const d=item.density.map((point,i)=>(i?'L':'M')+xx(point.x).toFixed(2)+','+yy(point.y).toFixed(2)).join(' ');
+    const line=svg('path',{
+      d,fill:'none',stroke:item.color,'stroke-width':3,'stroke-linecap':'round',
+      'stroke-linejoin':'round',tabindex:0
     });
-    root.append(svg('text',{x,y:b+23,'text-anchor':'middle',fill:'#173140','font-size':13},item.label));
-    root.append(svg('text',{x,y:b+41,'text-anchor':'middle',fill:'#60737c','font-size':12},'n='+item.n));
-  });
-  const legend=byId('distribution-legend');
-  legend.replaceChildren();
-  PROB_RANGES.forEach(x=>{
-    const item=document.createElement('span');item.className='legend-item';
-    const patch=document.createElement('span');patch.className='legend-swatch';patch.style.background=x.color;
-    item.append(patch,document.createTextNode(x.name));legend.append(item);
-  });
+    line.append(svg('title',{},item.label+' | '+item.n+' forecasts | Gaussian KDE with '+Math.round(bandwidth*100)+' percentage-point bandwidth'));
+    root.append(line);
+    const entry=document.createElement('span');entry.className='legend-item';
+    const swatch=document.createElement('span');swatch.className='legend-line';
+    swatch.style.background=item.color;
+    entry.append(swatch,document.createTextNode(item.label+' (n='+item.n+')'));
+    legend.append(entry);
+  }
+  if(!visible)root.append(svg('text',{
+    x:(left+right)/2,y:(top+bottom)/2,'text-anchor':'middle',fill:'#60737c','font-size':16
+  },'No resolved forecasts for this selection'));
 }
 function drawHorizonTrend(id,items,metric,title,yCap,color) {
   const root=byId(id);root.replaceChildren();
@@ -130,6 +170,10 @@ if(typeof document !== 'undefined' && typeof document.addEventListener==='functi
   // A very fast cached JSON request might resolve before the deferred chart script.
   // Render again once all deferred scripts are loaded, without refreshing the page.
   document.addEventListener('DOMContentLoaded',()=>{
+    const bandwidth=byId('kde-bandwidth');
+    if(bandwidth)bandwidth.addEventListener('change',()=>{
+      if(typeof renderCalibration==='function')renderCalibration();
+    });
     if(records.length && typeof render==='function')render();
   });
 }
