@@ -24,6 +24,28 @@ The primary reliability diagram is **binary candidate-contract calibration**, no
 
 Run `python3 scripts/collect_primaries.py`, or use **Actions → Collect 2026 primary history → Run workflow** to refresh the public `data/primaries_2026.json` dataset.
 
+## Interactive data controls
+
+**Refresh data** re-fetches the currently selected study's published JSON dataset
+without reloading the page or resetting the selected filters. The button does
+not invoke Kalshi or run a GitHub Actions collector; run the appropriate collector
+workflow first when fresh market settlements are needed.
+
+The calibration filters provide **minimum and maximum seven-day pre-snapshot
+contract volume**, equally weighted or volume-weighted scores, and **probability
+bins of 5%, 10%, 20%, or 25%**. A minimum observations-per-bin threshold hides
+insufficiently populated bins in the reliability chart and audit table.
+
+Volume filters apply to the score, reliability diagram, matched-cohort comparison,
+and market table. Observations with unknown seven-day volume are excluded
+whenever either volume limit is set. The bin-count visibility filter is *only*
+a chart/display filter: **Brier scores still use all forecasts passing the
+volume, office, horizon, and matched-cohort filters.** The chart shows how
+many forecast observations were hidden in low-count bins.
+
+All thresholds are exploratory. Excluding high-volume markets changes the
+population being analyzed; it does not demonstrate market manipulation.
+
 ## Run the app locally
 
 Use Python 3 and serve the repository; loading JSON from a `file://` page may
