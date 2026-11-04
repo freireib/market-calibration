@@ -13,3 +13,9 @@
 .bin-details summary{color:var(--teal);cursor:pointer;font-weight:650;font-size:13px;margin-bottom:12px}
 .bin-details .table-wrap{border-radius:7px}
 .bin-details th,.bin-details td{font-size:12px}
+
+.study-bar{display:flex;align-items:center;gap:12px;margin:0 0 20px;padding:13px 15px;background:#e7f0f1;border:1px solid #cfdee1;border-radius:10px;max-width:470px}
+.study-bar label{font-size:12px;font-weight:750;color:var(--ink)}
+.study-bar select{flex:1;min-width:0;font-size:15px;font-weight:650;border:1px solid #bfd0d4;background:#fff;border-radius:7px;padding:10px}
+[hidden]{display:none!important}
+@media(max-width:500px){.study-bar{max-width:none;margin-bottom:17px}}
