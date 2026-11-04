@@ -65,6 +65,9 @@ function selection() {
     horizons:new Set([...document.querySelectorAll('input[name="horizon"]:checked')].map(e=>e.value)),
     category:getValue('category'), weight:getValue('weight'),
     minVolume:Number(getValue('min-volume')),
+    maxVolume:Number(getValue('max-volume')),
+    binWidth:Number(getValue('bin-width'))/100,
+    minBinCount:Number(getValue('min-bin-count')),
     matched:byId('matched').checked,
     search:getValue('search-markets').trim().toLowerCase()
   };
@@ -75,25 +78,29 @@ function weightOf(r, method) {
   const volume = r.volume_7d == null ? 0 : r.volume_7d;
   return method === 'sqrt' ? Math.sqrt(volume) : volume;
 }
+function passesVolume(r, sel) {
+  // A positive limit requires measured pre-snapshot trading volume.
+  if (sel.minVolume > 0 && (r.volume_7d === null || r.volume_7d < sel.minVolume)) return false;
+  if (sel.maxVolume > 0 && (r.volume_7d === null || r.volume_7d > sel.maxVolume)) return false;
+  return true;
+}
 function eligibleRows(sel, scoredOnly=true) {
-  let rows = records.filter(r =>
-    sel.horizons.has(r.horizon) &&
-    (sel.category === 'all' || r.category === sel.category) &&
-    (sel.minVolume === 0 || (r.volume_7d !== null && r.volume_7d >= sel.minVolume)) &&
-    (!scoredOnly || (validP(r.probability) && validOutcome(r.outcome)))
-  );
+  const matches = r => (sel.category === 'all' || r.category === sel.category)
+    && passesVolume(r, sel);
+  let rows = records.filter(r => sel.horizons.has(r.horizon)
+    && matches(r)
+    && (!scoredOnly || (validP(r.probability) && validOutcome(r.outcome))));
   if (sel.matched) {
-    // Compare the same event at all three horizons, with usable resolved forecasts.
+    // Match ONLY the selected horizons, after applying all quote-level volume filters.
     const mask = new Map();
     records.forEach(r => {
-      if (validP(r.probability) && validOutcome(r.outcome) &&
-          (sel.category === 'all' || r.category === sel.category) &&
-          (sel.minVolume === 0 || (r.volume_7d !== null && r.volume_7d >= sel.minVolume))) {
-        const k=keyOf(r); if (!mask.has(k)) mask.set(k,new Set()); mask.get(k).add(r.horizon);
+      if (matches(r) && validP(r.probability) && validOutcome(r.outcome)) {
+        const k = keyOf(r);
+        if (!mask.has(k)) mask.set(k, new Set());
+        mask.get(k).add(r.horizon);
       }
     });
     rows = rows.filter(r => [...sel.horizons].every(h => mask.get(keyOf(r))?.has(h)));
-    // Disabled horizons must not constrain the matched sample.
   }
   return rows;
 }
@@ -109,11 +116,21 @@ function scoreRows(rows, method) {
   return {n:positive.length, brier:weightedMean(positive,r=>(r.probability-r.outcome)**2,method),
     nEvents:new Set(positive.map(keyOf)).size};
 }
-function binRows(rows, method) {
-  const bins = Array.from({length:10},()=>[]);
-  rows.forEach(r=>{if (weightOf(r,method)>0) bins[Math.min(9,Math.floor(r.probability*10))].push(r);});
-  return bins.map((group,i)=>{
-    if (!group.length) return null;
+function probabilityBin(p, width) {
+  const bins = Math.round(1 / width);
+  return Math.min(bins - 1, Math.floor(p / width));
+}
+function getBinGroups(rows, method, width) {
+  const bins = Array.from({length:Math.round(1/width)},()=>[]);
+  rows.forEach(r => {
+    if (weightOf(r,method)>0) bins[probabilityBin(r.probability,width)].push(r);
+  });
+  return bins;
+}
+function binRows(rows, method, width, minCount=1) {
+  const bins = getBinGroups(rows, method, width);
+  return bins.map((group,i) => {
+    if (group.length < minCount) return null;
     const ws=group.map(r=>weightOf(r,method));
     const total=ws.reduce((a,b)=>a+b,0), sumsq=ws.reduce((a,b)=>a+b*b,0);
     return {bin:i,n:group.length,x:weightedMean(group,r=>r.probability,method),
@@ -202,13 +219,14 @@ function renderCalibrationBins(rows, sel) {
     if (!sel.horizons.has(h.id))continue;
     const horizonRows=rows.filter(r=>r.horizon===h.id && weightOf(r,sel.weight)>0);
     const totalLoss=horizonRows.reduce((a,r)=>a+weightOf(r,sel.weight)*(r.probability-r.outcome)**2,0);
-    for(let bin=0;bin<10;bin++){
-      const group=horizonRows.filter(r=>Math.min(9,Math.floor(r.probability*10))===bin);
-      if(!group.length)continue;
+    const groups=getBinGroups(horizonRows,sel.weight,sel.binWidth);
+    for(let bin=0;bin<groups.length;bin++){
+      const group=groups[bin];
+      if(group.length<sel.minBinCount)continue;
       const numerator=group.reduce((a,r)=>a+weightOf(r,sel.weight)*(r.probability-r.outcome)**2,0);
       const tr=document.createElement('tr');
       [
-        h.label, bin*10+'–'+(bin+1)*10+'%', String(group.length),
+        h.label, String(Math.round(bin*sel.binWidth*100))+'–'+String(Math.round((bin+1)*sel.binWidth*100))+'%', String(group.length),
         pct(weightedMean(group,r=>r.probability,sel.weight)),
         pct(weightedMean(group,r=>r.outcome,sel.weight)),
         fmt(weightedMean(group,r=>(r.probability-r.outcome)**2,sel.weight)),
@@ -246,7 +264,13 @@ function renderCalibration() {
   summary.append(metric(primary?'Candidate forecasts':'Scored forecasts',String(scores.n),primary?'Binary candidate contracts × horizons':'One forecast per race and horizon'));
   summary.append(metric('Mean Brier',fmt(scores.brier),primary?'Binary score per candidate contract':'Lower is better · 0 is perfect'));
   const grouped=new Map();
-  HORIZONS.forEach(h=>grouped.set(h.id,binRows(rows.filter(r=>r.horizon===h.id),sel.weight)));
+  HORIZONS.forEach(h=>grouped.set(h.id,binRows(rows.filter(r=>r.horizon===h.id),sel.weight,sel.binWidth,sel.minBinCount)));
+  const displayable=rows.filter(r=>weightOf(r,sel.weight)>0);
+  const shown=HORIZONS.reduce((sum,h)=>sum+(grouped.get(h.id)||[]).reduce((a,p)=>a+p.n,0),0);
+  const hidden=displayable.length-shown;
+  byId('bin-coverage').textContent='Chart: '+shown+' of '+displayable.length+' filtered forecasts shown across '+Math.round(1/sel.binWidth)+' probability bins'
+    +(hidden?' ('+hidden+' hidden in bins with fewer than '+sel.minBinCount+' contracts).':'')
+    +' Brier scores use all '+displayable.length+' filtered forecasts, including hidden bins.';
   plot(grouped,sel);renderCalibrationBins(rows,sel);renderScores(rows,sel);
 }
 function td(text,className) {
@@ -300,13 +324,45 @@ function render() {
     ' | Updated: '+(dataset.generated_at||'not yet populated')+' | Records: '+records.length;
   renderCalibration();renderMarkets();
 }
+let latestLoadId=0;
+let loadedStudy=null;
 async function loadRepository() {
-  try{
-    const file=getValue('study')==='primaries_2026'?'primaries_2026.json':'observations.json';
+  const study=getValue('study');
+  const id=++latestLoadId;
+  const button=byId('refresh-data');
+  const status=byId('refresh-status');
+  button.disabled=true;
+  button.textContent='Checking…';
+  status.textContent='Checking published data…';
+  try {
+    const file=study==='primaries_2026'?'primaries_2026.json':'observations.json';
     const response=await fetch('./data/'+file+'?cache='+Date.now(),{cache:'no-store'});
     if(!response.ok)throw new Error('HTTP '+response.status);
-    ingest(await response.json());render();
-  }catch(err){const box=byId('dataset-status');box.dataset.state='error';box.textContent='Could not load repository dataset: '+err.message+'. Try serving this folder via a local web server.';}
+    const raw=await response.json();
+    if(id!==latestLoadId || study!==getValue('study'))return;
+    const prior=loadedStudy===study?dataset.generated_at:null;
+    ingest(raw);loadedStudy=study;
+    render();
+    const timestamp=raw.generated_at ? new Date(raw.generated_at).toLocaleString() : 'unknown';
+    const checked=new Date().toLocaleTimeString();
+    status.textContent=(prior===raw.generated_at ? 'No newer published data. ' : 'Dataset loaded. ')
+      +'Source updated: '+timestamp+' · Checked: '+checked+'.';
+  } catch(err) {
+    if(id!==latestLoadId)return;
+    const box=byId('dataset-status');
+    if(loadedStudy!==study){
+      ingest({schema_version:1,records:[],source:'Unavailable',generated_at:null});
+      loadedStudy=study;
+      render();
+    }
+    box.dataset.state='error';
+    status.textContent='Refresh failed: '+err.message+'. Previous available data retained.';
+  } finally {
+    if(id===latestLoadId){
+      button.disabled=false;
+      button.textContent='Refresh data';
+    }
+  }
 }
 document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(t=>{const active=t===tab;t.classList.toggle('active',active);if(active)t.setAttribute('aria-current','page');else t.removeAttribute('aria-current');});
@@ -324,9 +380,10 @@ byId('study').addEventListener('change',()=>{
 });
 byId('export-csv').addEventListener('click',exportCsv);
 byId('reset-data').addEventListener('click',loadRepository);
+byId('refresh-data').addEventListener('click',loadRepository);
 byId('data-file').addEventListener('change',async e=>{
   const file=e.target.files?.[0];if(!file)return;
-  try{ingest(JSON.parse(await file.text()));render();}
+  try{ingest(JSON.parse(await file.text()));loadedStudy=getValue('study');render();byId('refresh-status').textContent='Local JSON loaded. Refresh data retrieves the published GitHub dataset.';}
   catch(err){alert('Unable to import data: '+err.message);}
   e.target.value='';
 });
