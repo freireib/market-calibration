@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "notes": "Two verified shared 2026 primary contests. Do not pool candidate contracts with Kalshi or treat markets as the same contract without auditing resolution rules and candidate options.",
+  "events": [
+    {
+      "slug": "republican-nominee-for-florida-governor",
+      "primary_date": "2026-08-18",
+      "label": "Florida · Republican governor",
+      "category": "Governor",
+      "contest_id": "2026-FL-GOV-R-PRIMARY"
+    },
+    {
+      "slug": "michigan-democratic-senate-primary-winner",
+      "primary_date": "2026-08-04",
+      "label": "Michigan · Democratic Senate",
+      "category": "Senate",
+      "contest_id": "2026-MI-SEN-D-PRIMARY"
+    }
+  ]
+}
