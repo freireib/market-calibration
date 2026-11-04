@@ -272,6 +272,7 @@ function renderCalibration() {
     +(hidden?' ('+hidden+' hidden in bins with fewer than '+sel.minBinCount+' contracts).':'')
     +' Brier scores use all '+displayable.length+' filtered forecasts, including hidden bins.';
   plot(grouped,sel);renderCalibrationBins(rows,sel);renderScores(rows,sel);
+  if(typeof renderEvolution==='function')renderEvolution(rows,sel);
 }
 function td(text,className) {
   const cell=document.createElement('td');cell.textContent=text;
