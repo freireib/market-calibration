@@ -8,14 +8,14 @@ snapshots. The app is designed in the spirit of
 [CalibrationLab](https://github.com/freireib/calibration-lab): plain HTML, CSS and
 JavaScript, mobile friendly, transparent statistics and portable data.
 
-## Status — v0.1
+## Status — v0.1 (data updated November 3, 2026)
 
-- ✅ Static web interface: multi-horizon reliability curves, scores, market browser and CSV export
-- ✅ Provider-neutral versioned JSON data contract, with no invented election outcomes
-- ✅ Kalshi source adapter with curated market catalog and offline self-test
-- ⏳ **Real history has not yet been collected.** The checked-in dataset is empty.
-- ⏳ Market discovery, independent AP race calls, additional market sources and automated refresh are future work.
-- ⚠️ The API collector has **not yet been exercised against the live Kalshi API**. Review any responses and the market catalog before presenting empirical scores.
+- ✅ Static web dashboard: reliability curves, Brier scores, matched-cohort comparison, filters and CSV export.
+- ✅ Kalshi's live API tested on a GitHub runner against real 2026 market histories and finalizations.
+- ✅ First comprehensive contract discovery and data run: **129 markets** (64 House, 32 Senate, 33 governor); **381** usable historical quotes, **195** scored observations. Results will change as more races finalize.
+- ✅ Data collection available under **Actions → Collect 2026 election market data → Run workflow**. Select pilot or all. The workflow writes the validated dataset back to `main`.
+- ⚠️ The current dataset is *not* a representative sample of every 2026 race. Kalshi does not offer a market for every race; the current discovery pass also misses some at-large districts. Missing forecasts are excluded.
+- ⏳ Integration of independent AP calls and other market providers remains future work.
 
 ## Run the app locally
 
@@ -43,11 +43,7 @@ python3 scripts/collect_kalshi.py --self-test
 python3 scripts/collect_kalshi.py
 ```
 
-The initial `data/markets.json` catalog contains **only one pilot market**:
-a Democratic-win contract for CA-22. That is a test of the collection pathway,
-**not** a representative sample of all US House races. Verify the ticker and
-market semantics from the exchange before adding more contracts. A full
-reliability study requires a comprehensive, deduplicated catalog.
+The generated `data/markets.json` catalog contains verified 2026 Democratic-win contracts returned by Kalshi. Run `python3 scripts/discover_kalshi.py --scope all` to rebuild it; the repository workflow runs discovery and collection together. Coverage is restricted to listed Kalshi markets and excludes some at-large House series pending a naming-convention fix.
 
 The collector uses public market-data APIs. It requests hourly candlesticks up
 to each fixed time horizon, tries the live tier and the archive tier, computes
@@ -60,7 +56,7 @@ If a request fails, the previous dataset remains unchanged.
 
 ### Outcome verification
 
-The first adapter automatically scores **Kalshi-settled** binary contracts.
+The first adapter automatically scores **Kalshi-finalized** binary contracts.
 Settlement is not the same as an AP election call. To include earlier
 independently verified calls, fill out `data/verified_outcomes.csv`:
 
@@ -69,7 +65,7 @@ event_id,outcome,status,source_url
 ```
 
 Rows require an exact event ID from the catalog, a 0/1 outcome, a status of
-`called`, `certified`, or `settled`, and the specific public source URL.
+`called`, `certified`, `settled`, or `resolved`, and the specific public source URL.
 Do **not** infer an election winner from a candidate's lead in reported votes.
 Only populate trusted outcomes. The adapter does not yet fetch AP or NYT calls
 automatically.
@@ -138,14 +134,14 @@ choices to sensitivity-test, not properties guaranteed by the exchange.
 
 ## Near-term roadmap
 
-1. Run and debug a pilot historical download; inspect raw API payloads.
-2. Expand and audit a complete 2026 House/Senate/Governor binary-event catalog.
+1. Complete a market-by-market discovery audit, including at-large House districts and unexplained missing Kalshi contracts.
+2. Preserve reproducible sample cohorts while more election outcomes finalize.
 3. Integrate a reliable outcomes feed with explicit *called*, *uncalled* and
    *certified* statuses; retain source provenance.
 4. Compare equal-weight, liquidity-filtered, and volume-weighted calibration;
    break results out by office and competitiveness.
 5. Add other prediction markets without changing the dashboard schema.
-6. Automate collection only after the manual pipeline has been validated.
+6. Add scheduled refresh after reviewing the one-time workflow runs and the outcome-source policy.
 
 ## Sources
 
