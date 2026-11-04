@@ -318,7 +318,10 @@ function render() {
     ? 'Dataset loaded: '+records.length+' observations, '+count+' scored forecasts. Source: '+(dataset.source||'local JSON')+'.'
     : 'No resolved historical forecasts loaded yet. The app is ready for data; the repository dataset is empty. You can import JSON under Methods & data.';
   const primary=getValue('study')==='primaries_2026';
-  byId('study-intro').textContent=primary
+  const polymarket=primary&&(byId('provider')?.value==='Polymarket');
+  byId('study-intro').textContent=polymarket
+    ? 'Polymarket pilot: candidate YES contracts for two resolved 2026 primaries. Historical CLOB prices are not the same quote measure as Kalshi bid/ask midpoints. No cross-provider pooling.'
+    : primary
     ? 'Candidate-level YES forecasts at one day, one week, one month, and two months before each primary or runoff. Contracts within a race are correlated; this is an exploratory binary-contract analysis.'
     : 'Compare Democratic-win forecasts from the same dates before the November 3 general election. Unresolved events are excluded from scores.';
   byId('data-provenance').textContent='Source: '+(dataset.source||'not yet specified')+
@@ -329,6 +332,8 @@ let latestLoadId=0;
 let loadedStudy=null;
 async function loadRepository() {
   const study=getValue('study');
+  const provider=byId('provider')?.value || 'Kalshi';
+  const studyKey=study+':'+provider;
   const id=++latestLoadId;
   const button=byId('refresh-data');
   const status=byId('refresh-status');
@@ -336,13 +341,15 @@ async function loadRepository() {
   button.textContent='Checking…';
   status.textContent='Checking published data…';
   try {
-    const file=study==='primaries_2026'?'primaries_2026.json':'observations.json';
+    const file=study==='primaries_2026'
+      ? (provider==='Polymarket'?'polymarket_primaries_2026_pilot.json':'primaries_2026.json')
+      : 'observations.json';
     const response=await fetch('./data/'+file+'?cache='+Date.now(),{cache:'no-store'});
     if(!response.ok)throw new Error('HTTP '+response.status);
     const raw=await response.json();
-    if(id!==latestLoadId || study!==getValue('study'))return;
-    const prior=loadedStudy===study?dataset.generated_at:null;
-    ingest(raw);loadedStudy=study;
+    if(id!==latestLoadId || studyKey!==getValue('study')+':'+(byId('provider')?.value||'Kalshi'))return;
+    const prior=loadedStudy===studyKey?dataset.generated_at:null;
+    ingest(raw);loadedStudy=studyKey;
     render();
     const timestamp=raw.generated_at ? new Date(raw.generated_at).toLocaleString() : 'unknown';
     const checked=new Date().toLocaleTimeString();
@@ -351,9 +358,9 @@ async function loadRepository() {
   } catch(err) {
     if(id!==latestLoadId)return;
     const box=byId('dataset-status');
-    if(loadedStudy!==study){
+    if(loadedStudy!==studyKey){
       ingest({schema_version:1,records:[],source:'Unavailable',generated_at:null});
-      loadedStudy=study;
+      loadedStudy=studyKey;
       render();
     }
     box.dataset.state='error';
@@ -370,6 +377,20 @@ document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>
   document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===tab.dataset.view));
 }));
 document.querySelectorAll('.controls input,.controls select,#search-markets').forEach(e=>e.addEventListener('input',render));
+function syncProviderControls() {
+  const primary=getValue('study')==='primaries_2026';
+  const source=byId('provider');
+  if(!primary)source.value='Kalshi';
+  source.disabled=!primary;
+  const poly=primary&&source.value==='Polymarket';
+  byId('provider-note').hidden=!poly;
+  for(const id of ['min-volume','max-volume']){
+    byId(id).disabled=poly;
+    if(poly)byId(id).value='0';
+  }
+  byId('weight').disabled=poly;
+  if(poly)byId('weight').value='equal';
+}
 byId('study').addEventListener('change',()=>{
   const primary=getValue('study')==='primaries_2026';
   const week=byId('week-horizon-container');
@@ -377,6 +398,11 @@ byId('study').addEventListener('change',()=>{
   const dayLabels=document.querySelectorAll('input[name="horizon"]');
   dayLabels.forEach(x=>{x.checked=primary||x.value!=='one_week';});
   byId('matched').checked=!primary;
+  syncProviderControls();
+  loadRepository();
+});
+byId('provider').addEventListener('change',()=>{
+  syncProviderControls();
   loadRepository();
 });
 byId('export-csv').addEventListener('click',exportCsv);
@@ -384,7 +410,7 @@ byId('reset-data').addEventListener('click',loadRepository);
 byId('refresh-data').addEventListener('click',loadRepository);
 byId('data-file').addEventListener('change',async e=>{
   const file=e.target.files?.[0];if(!file)return;
-  try{ingest(JSON.parse(await file.text()));loadedStudy=getValue('study');render();byId('refresh-status').textContent='Local JSON loaded. Refresh data retrieves the published GitHub dataset.';}
+  try{ingest(JSON.parse(await file.text()));loadedStudy=getValue('study')+':'+(byId('provider')?.value||'Kalshi');render();byId('refresh-status').textContent='Local JSON loaded. Refresh data retrieves the published GitHub dataset.';}
   catch(err){alert('Unable to import data: '+err.message);}
   e.target.value='';
 });
