@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#132c37">
   <meta name="description" content="A reproducible look at how accurately prediction markets forecast events.">
   <title>Market Calibration</title>
-  <link rel="stylesheet" href="./style.css?v=6">
+  <link rel="stylesheet" href="./style.css?v=7">
 </head>
 <body>
   <div class="app-shell">
@@ -101,6 +101,22 @@
           <h2>Scores by horizon</h2>
           <div id="scores"></div>
         </div>
+        <div class="chart-card">
+          <h2>Where are the probabilities concentrated?</h2>
+          <p class="caption">Each bar shows the distribution of predictions within that horizon. The middle 25–75% group is highlighted. Filters and weighting apply.</p>
+          <svg id="probability-distribution" viewBox="0 0 700 324" role="img" aria-label="Probability distribution by forecast horizon"></svg>
+          <div id="distribution-legend" class="legend"></div>
+        </div>
+        <div class="chart-card">
+          <h2>Uncertainty and accuracy versus horizon</h2>
+          <p class="caption">Forecasts generally become sharper closer to an event. Sharpness alone does not establish accuracy. Horizons are category labels, not a linear time scale.</p>
+          <div class="trend-grid">
+            <div><h3>Mean binary entropy</h3><svg id="entropy-trend" viewBox="0 0 700 250" role="img" aria-label="Mean binary entropy by horizon"></svg><p class="caption">0 bits = certain; 1 bit = 50/50.</p></div>
+            <div><h3>Brier score versus calibrated benchmark</h3><svg id="brier-trend" viewBox="0 0 700 250" role="img" aria-label="Actual and calibrated benchmark Brier by horizon"></svg><p class="caption"><span class="legend-key actual"></span> Actual Brier · <span class="legend-key benchmark"></span> Expected Brier if calibrated, mean p(1−p).</p></div>
+          </div>
+          <div class="table-wrap" id="evolution-table"></div>
+          <p id="evolution-note" class="caption"></p>
+        </div>
       </section>
       <section class="view" id="markets" aria-label="Individual markets">
         <p class="eyebrow">OBSERVATIONS</p><h1>Inspect the races.</h1>
@@ -128,6 +144,8 @@
           <p>Missing, stale, or invalid probabilities are excluded, not imputed. Turn on “Matched-race cohort only” to compare the same resolved races at all three horizons. Source coverage and gaps must be inspected before publishing conclusions.</p>
           <h2>Refresh without reloading</h2>
           <p>The Refresh data button requests the most recent JSON already published on GitHub Pages and updates the chart while preserving your filter selections. It does not trigger the Kalshi API collector; to get newer settled results first run the appropriate GitHub Actions collection workflow.</p>
+          <h2>Sharpness, information, and accuracy over time</h2>
+          <p>The probability distribution chart distinguishes extreme forecasts (below 10% or above 90%) from the middle 25–75%. Binary Shannon entropy is −p log₂(p) − (1−p) log₂(1−p) in bits; it is largest for 50/50 forecasts. Its complement 1−H(p) measures departure from a 50/50 baseline (sharpness), not correctness. The calibrated benchmark is the sample mean of p(1−p): the expected Brier score if each contract's implied probability were calibrated. An observed Brier below or above this benchmark does not independently prove calibration or miscalibration. With unselected cohorts, time trends can reflect changing data availability; use Matched cohort for more direct comparisons.</p>
           <h2>Bring your own dataset</h2>
           <p>Upload a local JSON dataset using the published schema. Data is handled in your browser only; uploads do not modify the repository.</p>
           <div class="toolbar"><input id="data-file" type="file" accept=".json,application/json"><button id="reset-data" class="action secondary">Reload repository data</button></div>
@@ -138,6 +156,7 @@
     </main>
     <footer>Experimental research tool · Not trading advice · No simulated election results are displayed.</footer>
   </div>
-  <script src="./app.js?v=6" defer></script>
+  <script src="./app.js?v=7" defer></script>
+  <script src="./evolution.js?v=2" defer></script>
 </body>
 </html>
