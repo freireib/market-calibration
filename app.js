@@ -154,10 +154,6 @@ function plot(grouped, sel) {
     if (!sel.horizons.has(horizon.id)) continue;
     const points=grouped.get(horizon.id)||[];
     count += points.length;
-    if (points.length>1) {
-      root.append(svg('polyline',{points:points.map(p=>x(p.x)+','+y(p.y)).join(' '),
-        fill:'none',stroke:horizon.color,'stroke-width':2.3,'stroke-linecap':'round','stroke-linejoin':'round'}));
-    }
     for (const p of points) {
       const [lower,upper]=wilson(p.y,p.effectiveN);
       root.append(svg('line',{x1:x(p.x),x2:x(p.x),y1:y(lower),y2:y(upper),stroke:horizon.color,'stroke-width':1.7}));
@@ -165,6 +161,13 @@ function plot(grouped, sel) {
       const circle=svg('circle',{cx:x(p.x),cy:y(p.y),r:Math.min(9,4+Math.sqrt(p.n)),fill:horizon.color,stroke:'white','stroke-width':1.5,tabindex:0});
       circle.append(svg('title',{},horizon.label+' | forecasts '+pct(p.x)+' | observed '+pct(p.y)+' | races '+p.n+' | effective N '+fmt(p.effectiveN,1)));
       root.append(circle);
+      if (sel.horizons.size===1) {
+        // Counts, rather than connecting lines, convey how sparse most bins are.
+        root.append(svg('text',{
+          x:x(p.x)+12, y:Math.max(T+10,y(p.y)-10),
+          fill:horizon.color,'font-size':12,'font-weight':650
+        },'n='+p.n));
+      }
     }
   }
   if (!count) root.append(svg('text',{x:(L+R)/2,y:227,class:'chart-empty'},'No resolved forecasts for this selection'));
@@ -175,8 +178,39 @@ function plot(grouped, sel) {
     item.append(line,document.createTextNode(h.label));legend.append(item);
   });
   byId('chart-note').textContent=sel.weight==='equal'
-    ? 'Each race receives equal weight. Bars show approximate 95% Wilson intervals; circles scale with the number of races.'
-    : 'Weighted frequencies use prior 7-day contract volume; Wilson intervals use effective sample size and are descriptive, not robust to correlated races.';
+    ? 'Each dot is an independently aggregated probability bin (not a continuous curve). n labels appear when one horizon is selected. Vertical bars are approximate 95% Wilson intervals; circles scale with race count. Small n makes apparent miscalibration hard to interpret.'
+    : 'Dots are separate probability bins; volume-weighted observations use the prior seven days. Intervals use approximate effective sample size and are not robust to correlation among races.';
+}
+function renderCalibrationBins(rows, sel) {
+  const parent=byId('calibration-bins');
+  parent.replaceChildren();
+  const table=document.createElement('table');
+  const head=document.createElement('thead'), hr=document.createElement('tr');
+  ['Horizon','Forecast bin','Races (n)','Mean forecast','Observed YES','Within-bin Brier','Share of total loss'].forEach(t=>{
+    const th=document.createElement('th');th.textContent=t;hr.append(th);
+  });
+  head.append(hr);table.append(head);
+  const body=document.createElement('tbody');
+  for(const h of HORIZONS) {
+    if (!sel.horizons.has(h.id))continue;
+    const horizonRows=rows.filter(r=>r.horizon===h.id && weightOf(r,sel.weight)>0);
+    const totalLoss=horizonRows.reduce((a,r)=>a+weightOf(r,sel.weight)*(r.probability-r.outcome)**2,0);
+    for(let bin=0;bin<10;bin++){
+      const group=horizonRows.filter(r=>Math.min(9,Math.floor(r.probability*10))===bin);
+      if(!group.length)continue;
+      const numerator=group.reduce((a,r)=>a+weightOf(r,sel.weight)*(r.probability-r.outcome)**2,0);
+      const tr=document.createElement('tr');
+      [
+        h.label, bin*10+'–'+(bin+1)*10+'%', String(group.length),
+        pct(weightedMean(group,r=>r.probability,sel.weight)),
+        pct(weightedMean(group,r=>r.outcome,sel.weight)),
+        fmt(weightedMean(group,r=>(r.probability-r.outcome)**2,sel.weight)),
+        pct(totalLoss>0?numerator/totalLoss:0)
+      ].forEach((value,i)=>{const cell=td(value,i>=2?'num':'');tr.append(cell);});
+      body.append(tr);
+    }
+  }
+  table.append(body);parent.append(table);
 }
 function renderScores(rows,sel) {
   const parent=byId('scores');parent.replaceChildren();
@@ -204,7 +238,7 @@ function renderCalibration() {
   summary.append(metric('Mean Brier',fmt(scores.brier),'Lower is better · 0 is perfect'));
   const grouped=new Map();
   HORIZONS.forEach(h=>grouped.set(h.id,binRows(rows.filter(r=>r.horizon===h.id),sel.weight)));
-  plot(grouped,sel);renderScores(rows,sel);
+  plot(grouped,sel);renderCalibrationBins(rows,sel);renderScores(rows,sel);
 }
 function td(text,className) {
   const cell=document.createElement('td');cell.textContent=text;
