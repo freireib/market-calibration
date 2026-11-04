@@ -6,7 +6,7 @@ on:
         description: "Pilot or all available 2026 races"
         type: choice
         required: true
-        default: pilot
+        default: all
         options:
           - pilot
           - all
@@ -73,5 +73,7 @@ jobs:
             echo "No changes"
           else
             git commit -m "Update 2026 election forecast observations"
+            git fetch origin main
+            git rebase origin/main
             git push
           fi
