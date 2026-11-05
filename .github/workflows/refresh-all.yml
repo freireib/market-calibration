@@ -1,0 +1,83 @@
+name: Refresh all market data
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/refresh-all.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-calibration-refresh-all
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run offline API and data quality checks
+        run: |
+          python scripts/collect_kalshi.py --self-test
+          python scripts/collect_primaries.py --self-test
+          python scripts/collect_polymarket.py --self-test
+      - name: Record published baseline counts
+        run: |
+          cp data/observations.json /tmp/market-calibration-general-before.json
+          cp data/primaries_2026.json /tmp/market-calibration-primaries-before.json
+          cp data/polymarket_primaries_2026_pilot.json /tmp/market-calibration-polymarket-before.json
+      - name: Discover all available 2026 election markets
+        run: python scripts/discover_kalshi.py --scope all
+      - name: Refresh 2026 general-election results
+        run: python scripts/collect_kalshi.py
+      - name: Refresh 2026 Kalshi primary histories
+        run: python scripts/collect_primaries.py
+      - name: Refresh 2026 Polymarket pilot
+        run: python scripts/collect_polymarket.py
+      - name: Validate, compare, and summarize results
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          studies = [
+            ("GENERAL", "data/observations.json", "/tmp/market-calibration-general-before.json", ["two_months", "one_month", "one_day"]),
+            ("PRIMARIES", "data/primaries_2026.json", "/tmp/market-calibration-primaries-before.json", ["two_months", "one_month", "one_week", "one_day"]),
+            ("POLYMARKET", "data/polymarket_primaries_2026_pilot.json", "/tmp/market-calibration-polymarket-before.json", ["two_months", "one_month", "one_week", "one_day"]),
+          ]
+          for study, location, previous, horizons in studies:
+            now = json.loads(Path(location).read_text())
+            old = json.loads(Path(previous).read_text())
+            rows = now["records"]
+            assert rows and now["schema_version"] == 1
+            assert all(r["horizon"] in horizons for r in rows)
+            assert all(r["probability"] is None or 0 <= r["probability"] <= 1 for r in rows)
+            assert all(r["outcome"] is None or r["outcome"] in (0, 1) for r in rows)
+            assert len(rows) >= len(old["records"]) * 0.9, "Major coverage loss in " + study
+            scored = [r for r in rows if r["probability"] is not None and r["outcome"] is not None]
+            old_scored = sum(r["probability"] is not None and r["outcome"] is not None for r in old["records"])
+            assert len(scored) >= old_scored * 0.9, "Major scored coverage loss in " + study
+            print("REFRESH", study, "BEFORE", len(old["records"]), old_scored,
+                  "AFTER", len(rows), len(scored), "GENERATED", now["generated_at"])
+            for horizon in horizons:
+              group = [r for r in scored if r["horizon"] == horizon]
+              value = sum((r["probability"] - r["outcome"])**2 for r in group) / len(group) if group else None
+              print("BRIER", study, horizon, "N", len(group), "SCORE", round(value, 6) if value is not None else None)
+          PY
+      - name: Publish all three validated datasets atomically
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/markets.json data/observations.json data/primaries_2026.json data/polymarket_primaries_2026_pilot.json
+          if git diff --cached --quiet; then
+            echo "No source data changes"
+          else
+            git commit -m "Refresh election and primary forecasting datasets"
+            git fetch origin main
+            git rebase origin/main
+            git push
+          fi
