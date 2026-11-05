@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-04T13:03:20.897710+00:00",
+  "generated_at": "2026-11-05T03:18:47.400440+00:00",
   "source": "Kalshi historical and live market candlesticks; settlement or verified call",
   "records": [
     {
@@ -1954,9 +1954,9 @@
       "spread": 0.05499999999999994,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSECA13-26-D"
     },
     {
       "provider": "Kalshi",
@@ -1971,9 +1971,9 @@
       "spread": 0.028999999999999915,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSECA13-26-D"
     },
     {
       "provider": "Kalshi",
@@ -1988,9 +1988,9 @@
       "spread": 0.009000000000000008,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSECA13-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2056,9 +2056,9 @@
       "spread": 0.020000000000000018,
       "quote_age_hours": 1.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSECA22-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2073,9 +2073,9 @@
       "spread": 0.016000000000000014,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSECA22-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2090,9 +2090,9 @@
       "spread": 0.0050000000000000044,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSECA22-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2260,9 +2260,9 @@
       "spread": 0.03699999999999992,
       "quote_age_hours": 1.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSECA47-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2277,9 +2277,9 @@
       "spread": 0.008999999999999897,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSECA47-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2294,9 +2294,9 @@
       "spread": 0.0040000000000000036,
       "quote_age_hours": 5.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSECA47-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2923,9 +2923,9 @@
       "spread": 0.06,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEMI4-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2940,9 +2940,9 @@
       "spread": 0.02999999999999997,
       "quote_age_hours": 2.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEMI4-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2957,9 +2957,9 @@
       "spread": 0.010000000000000009,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEMI4-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2974,9 +2974,9 @@
       "spread": 0.010000000000000009,
       "quote_age_hours": 6.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEMI7-26-D"
     },
     {
       "provider": "Kalshi",
@@ -2991,9 +2991,9 @@
       "spread": 0.010000000000000009,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEMI7-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3008,9 +3008,9 @@
       "spread": 0.010000000000000009,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEMI7-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3076,9 +3076,9 @@
       "spread": 0.010000000000000009,
       "quote_age_hours": 18.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEMI10-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3093,9 +3093,9 @@
       "spread": 0.020000000000000018,
       "quote_age_hours": 6.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEMI10-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3110,9 +3110,9 @@
       "spread": 0.010000000000000009,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEMI10-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3739,9 +3739,9 @@
       "spread": 0.020000000000000018,
       "quote_age_hours": 1.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSENY3-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3756,9 +3756,9 @@
       "spread": 0.030000000000000027,
       "quote_age_hours": 1.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSENY3-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3773,9 +3773,9 @@
       "spread": 0.0030000000000000027,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSENY3-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3790,9 +3790,9 @@
       "spread": 0.07400000000000007,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSENY4-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3807,9 +3807,9 @@
       "spread": 0.010000000000000009,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSENY4-26-D"
     },
     {
       "provider": "Kalshi",
@@ -3824,9 +3824,9 @@
       "spread": 0.0010000000000000009,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSENY4-26-D"
     },
     {
       "provider": "Kalshi",
@@ -4810,9 +4810,9 @@
       "spread": 0.020000000000000018,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEWA3-26-D"
     },
     {
       "provider": "Kalshi",
@@ -4827,9 +4827,9 @@
       "spread": 0.010000000000000009,
       "quote_age_hours": 6.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEWA3-26-D"
     },
     {
       "provider": "Kalshi",
@@ -4844,9 +4844,9 @@
       "spread": 0.010000000000000009,
       "quote_age_hours": 0.0,
       "quote_status": "ok",
-      "outcome": null,
-      "outcome_status": "uncalled",
-      "outcome_source": ""
+      "outcome": 1,
+      "outcome_status": "resolved",
+      "outcome_source": "https://api.elections.kalshi.com/trade-api/v2/markets/HOUSEWA3-26-D"
     },
     {
       "provider": "Kalshi",
