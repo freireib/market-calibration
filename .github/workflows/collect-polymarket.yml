@@ -4,12 +4,13 @@ on:
   push:
     paths:
       - '.github/workflows/collect-polymarket.yml'
+      - 'data/polymarket_primary_events.json'
 permissions:
   contents: write
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -17,7 +18,7 @@ jobs:
           python-version: '3.12'
       - name: Test Polymarket collector
         run: python scripts/collect_polymarket.py --self-test
-      - name: Collect two overlapping primary election events
+      - name: Collect all cataloged resolved primary events
         run: python scripts/collect_polymarket.py
       - name: Validate separate Polymarket outcomes
         run: |
@@ -25,12 +26,14 @@ jobs:
           import json
           d=json.load(open("data/polymarket_primaries_2026_pilot.json"))
           r=d["records"]
-          assert r and len(set(x["contest_id"] for x in r)) == 2
+          catalog=json.load(open("data/polymarket_primary_events.json"))
+          assert r and len(set(x["contest_id"] for x in r)) == len(catalog["events"])
           assert all(x["provider"]=="Polymarket" for x in r)
           assert all(x["volume_7d"] is None for x in r)
           assert all(x["outcome"] in (0,1) for x in r)
           scored=[x for x in r if x["probability"] is not None]
-          assert len(scored)>0
+          assert len(scored)>=64
+          assert d["statistics"]["contests"] == len(catalog["events"])
           print("POLY_VALIDATED",len(r),"SCORED",len(scored))
           for h in ("two_months","one_month","one_week","one_day"):
             x=[a for a in scored if a["horizon"]==h]
