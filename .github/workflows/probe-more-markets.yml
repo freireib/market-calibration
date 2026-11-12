@@ -58,3 +58,31 @@ jobs:
                   'SAMPLE',json.dumps([{k:m.get(k) for k in ('ticker','event_ticker','title','yes_sub_title','status','result')} for m in markets[:3]])[:950],flush=True)
             except Exception as e:print('KALSHI_PROBE_ERROR',series,repr(e)[:200],flush=True)
           PY
+
+      - name: Check alternative House market coverage in archives
+        run: |
+          python - <<'PY'
+          import sys,re,json
+          sys.path.insert(0,'scripts')
+          from collect_kalshi import api_get
+          for series in ['KXHOUSERACE','HOUSEAKAL','HOUSEVTAL','KXHOUSEUT02']:
+            for endpoint in ['/markets','/historical/markets']:
+              count=0
+              yes2026=[]
+              cursor=None
+              try:
+                for page in range(6):
+                  params={'series_ticker':series,'limit':200}
+                  if cursor:params['cursor']=cursor
+                  d=api_get(endpoint,params)
+                  markets=d.get('markets') or []
+                  count+=len(markets)
+                  yes2026.extend(m for m in markets if re.search(r'-26-D$',m.get('ticker','')))
+                  cursor=d.get('cursor')
+                  if not cursor:break
+                print('KALSHI_ARCHIVE_PROBE',series,endpoint,'TOTAL_PAGE_MARKETS',count,
+                  'D2026',len(yes2026),'CURSOR_MORE',bool(cursor),
+                  'EXAMPLES',json.dumps([{k:m.get(k) for k in ('ticker','event_ticker','title','status','result')} for m in yes2026[:7]])[:1800],
+                  flush=True)
+              except Exception as e:print('KALSHI_ARCHIVE_ERROR',series,endpoint,repr(e)[:250],flush=True)
+          PY
