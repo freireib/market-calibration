@@ -31,12 +31,15 @@ test('provider switching fetches distinct unpooled JSON assets with no full relo
   assert.doesNotMatch(urls[1],/polymarket_/);
   assert.match(urls[2],/observations\.json/);
 });
-test('Polymarket pilot is small, separated, resolved, and has explicitly missing 7-day volume',()=>{
+test('Polymarket data remain separate, resolved and have explicitly missing 7-day volume',()=>{
   const data=JSON.parse(fs.readFileSync(path.join(__dirname,'..','data','polymarket_primaries_2026_pilot.json'),'utf8'));
+  const catalog=JSON.parse(fs.readFileSync(path.join(__dirname,'..','data','polymarket_primary_events.json'),'utf8'));
   assert.equal(data.schema_version,1);
-  assert.equal(data.statistics.contests,2);
-  assert.equal(data.statistics.contracts,43);
+  assert.ok(data.statistics.contests>=2 && data.statistics.contests<=catalog.events.length);
+  assert.equal(data.statistics.contracts,new Set(data.records.map(r=>r.event_id)).size);
+  assert.equal(data.statistics.contests,new Set(data.records.map(r=>r.contest_id)).size);
   assert.ok(data.records.every(r=>r.provider==='Polymarket'&&r.volume_7d===null));
   assert.ok(data.records.every(r=>r.outcome===0||r.outcome===1));
-  assert.equal(data.records.filter(r=>r.probability!==null).length,64);
+  assert.ok(data.records.filter(r=>r.probability!==null).length>=64);
+  assert.ok(data.records.every(r=>r.probability===null||(r.probability>=0&&r.probability<=1)));
 });
