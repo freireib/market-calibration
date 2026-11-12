@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "study_id": "polymarket_primaries_2026_pilot",
-  "study_label": "2026 Primaries · Polymarket pilot",
+  "study_label": "2026 Primaries · Polymarket",
   "generated_at": "2026-11-12T14:29:09.925899+00:00",
   "source": "Polymarket Gamma event outcomes and historical CLOB YES prices",
-  "sample": "Two curated, fully resolved nomination contests; NEVER pooled with Kalshi",
+  "sample": "11 curated, fully resolved 2026 primary nomination contests; provider-specific sample, not pooled with Kalshi",
   "statistics": {
     "contests": 11,
     "contracts": 266,
