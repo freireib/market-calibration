@@ -265,6 +265,94 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-al01",
+    "label": "AL-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AL01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-al02",
+    "label": "AL-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AL02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-al03",
+    "label": "AL-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AL03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-al04",
+    "label": "AL-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AL04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-al05",
+    "label": "AL-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AL05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-al06",
+    "label": "AL-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AL06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-al07",
+    "label": "AL-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AL07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ar01",
+    "label": "AR-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AR01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ar02",
+    "label": "AR-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AR02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ar03",
+    "label": "AR-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AR03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ar04",
+    "label": "AR-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AR04-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseaz1",
     "label": "AZ-01 \u00b7 U.S. House",
     "category": "House",
@@ -281,11 +369,75 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-az03",
+    "label": "AZ-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AZ03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-az04",
+    "label": "AZ-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AZ04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-az05",
+    "label": "AZ-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AZ05-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseaz6",
     "label": "AZ-06 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEAZ6",
     "ticker": "HOUSEAZ6-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-az07",
+    "label": "AZ-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AZ07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-az08",
+    "label": "AZ-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AZ08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-az09",
+    "label": "AZ-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-AZ09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca01",
+    "label": "CA-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca02",
+    "label": "CA-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA02-26-D"
   },
   {
     "provider": "Kalshi",
@@ -297,6 +449,46 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca04",
+    "label": "CA-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca05",
+    "label": "CA-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca06",
+    "label": "CA-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca07",
+    "label": "CA-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca08",
+    "label": "CA-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA08-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseca9",
     "label": "CA-09 \u00b7 U.S. House",
     "category": "House",
@@ -305,11 +497,91 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca10",
+    "label": "CA-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca11",
+    "label": "CA-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca12",
+    "label": "CA-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA12-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseca13",
     "label": "CA-13 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSECA13",
     "ticker": "HOUSECA13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca14",
+    "label": "CA-14 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA14-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca15",
+    "label": "CA-15 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA15-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca16",
+    "label": "CA-16 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA16-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca17",
+    "label": "CA-17 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA17-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca18",
+    "label": "CA-18 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA18-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca19",
+    "label": "CA-19 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA19-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca20",
+    "label": "CA-20 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA20-26-D"
   },
   {
     "provider": "Kalshi",
@@ -329,11 +601,139 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca23",
+    "label": "CA-23 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA23-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca24",
+    "label": "CA-24 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA24-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca25",
+    "label": "CA-25 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA25-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca26",
+    "label": "CA-26 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA26-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseca27",
     "label": "CA-27 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSECA27",
     "ticker": "HOUSECA27-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca28",
+    "label": "CA-28 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA28-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca29",
+    "label": "CA-29 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA29-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca30",
+    "label": "CA-30 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA30-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca31",
+    "label": "CA-31 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA31-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca32",
+    "label": "CA-32 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA32-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca33",
+    "label": "CA-33 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA33-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca34",
+    "label": "CA-34 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA34-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca35",
+    "label": "CA-35 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA35-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca36",
+    "label": "CA-36 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA36-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca37",
+    "label": "CA-37 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA37-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca38",
+    "label": "CA-38 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA38-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca39",
+    "label": "CA-39 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA39-26-D"
   },
   {
     "provider": "Kalshi",
@@ -345,11 +745,43 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca42",
+    "label": "CA-42 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA42-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca43",
+    "label": "CA-43 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA43-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca44",
+    "label": "CA-44 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA44-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseca45",
     "label": "CA-45 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSECA45",
     "ticker": "HOUSECA45-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca46",
+    "label": "CA-46 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA46-26-D"
   },
   {
     "provider": "Kalshi",
@@ -361,11 +793,59 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca48",
+    "label": "CA-48 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA48-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseca49",
     "label": "CA-49 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSECA49",
     "ticker": "HOUSECA49-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca50",
+    "label": "CA-50 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA50-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca51",
+    "label": "CA-51 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA51-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ca52",
+    "label": "CA-52 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CA52-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-co01",
+    "label": "CO-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CO01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-co02",
+    "label": "CO-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CO02-26-D"
   },
   {
     "provider": "Kalshi",
@@ -377,11 +857,75 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-co04",
+    "label": "CO-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CO04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-co05",
+    "label": "CO-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CO05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-co06",
+    "label": "CO-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CO06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-co07",
+    "label": "CO-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CO07-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseco8",
     "label": "CO-08 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSECO8",
     "ticker": "HOUSECO8-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ct01",
+    "label": "CT-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CT01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ct02",
+    "label": "CT-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CT02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ct03",
+    "label": "CT-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CT03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ct04",
+    "label": "CT-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-CT04-26-D"
   },
   {
     "provider": "Kalshi",
@@ -393,11 +937,187 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-deal",
+    "label": "DE-AL \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-DEAL-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl01",
+    "label": "FL-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl02",
+    "label": "FL-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl03",
+    "label": "FL-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl04",
+    "label": "FL-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl05",
+    "label": "FL-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl06",
+    "label": "FL-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl07",
+    "label": "FL-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl08",
+    "label": "FL-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl09",
+    "label": "FL-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl10",
+    "label": "FL-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl11",
+    "label": "FL-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl12",
+    "label": "FL-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL12-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housefl13",
     "label": "FL-13 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEFL13",
     "ticker": "HOUSEFL13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl14",
+    "label": "FL-14 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL14-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl15",
+    "label": "FL-15 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL15-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl16",
+    "label": "FL-16 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL16-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl17",
+    "label": "FL-17 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL17-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl18",
+    "label": "FL-18 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL18-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl19",
+    "label": "FL-19 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL19-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl20",
+    "label": "FL-20 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL20-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl21",
+    "label": "FL-21 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL21-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl22",
+    "label": "FL-22 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL22-26-D"
   },
   {
     "provider": "Kalshi",
@@ -409,6 +1129,174 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl24",
+    "label": "FL-24 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL24-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl25",
+    "label": "FL-25 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL25-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl26",
+    "label": "FL-26 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL26-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl27",
+    "label": "FL-27 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL27-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-fl28",
+    "label": "FL-28 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-FL28-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga01",
+    "label": "GA-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga02",
+    "label": "GA-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga03",
+    "label": "GA-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga04",
+    "label": "GA-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga05",
+    "label": "GA-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga06",
+    "label": "GA-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga07",
+    "label": "GA-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga08",
+    "label": "GA-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga09",
+    "label": "GA-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga10",
+    "label": "GA-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga11",
+    "label": "GA-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga12",
+    "label": "GA-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA12-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga13",
+    "label": "GA-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ga14",
+    "label": "GA-14 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-GA14-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-hi01",
+    "label": "HI-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-HI01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-hi02",
+    "label": "HI-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-HI02-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseia1",
     "label": "IA-01 \u00b7 U.S. House",
     "category": "House",
@@ -417,11 +1305,171 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ia02",
+    "label": "IA-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IA02-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseia3",
     "label": "IA-03 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEIA3",
     "ticker": "HOUSEIA3-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ia04",
+    "label": "IA-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IA04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-id01",
+    "label": "ID-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-ID01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-id02",
+    "label": "ID-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-ID02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il01",
+    "label": "IL-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il02",
+    "label": "IL-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il03",
+    "label": "IL-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il04",
+    "label": "IL-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il05",
+    "label": "IL-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il06",
+    "label": "IL-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il07",
+    "label": "IL-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il08",
+    "label": "IL-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il09",
+    "label": "IL-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il10",
+    "label": "IL-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il11",
+    "label": "IL-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il12",
+    "label": "IL-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL12-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il13",
+    "label": "IL-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il14",
+    "label": "IL-14 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL14-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il15",
+    "label": "IL-15 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL15-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-il16",
+    "label": "IL-16 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IL16-26-D"
   },
   {
     "provider": "Kalshi",
@@ -441,11 +1489,355 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-in02",
+    "label": "IN-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IN02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-in03",
+    "label": "IN-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IN03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-in04",
+    "label": "IN-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IN04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-in05",
+    "label": "IN-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IN05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-in06",
+    "label": "IN-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IN06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-in08",
+    "label": "IN-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IN08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-in09",
+    "label": "IN-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-IN09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ks01",
+    "label": "KS-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KS01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ks02",
+    "label": "KS-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KS02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ks03",
+    "label": "KS-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KS03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ks04",
+    "label": "KS-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KS04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ky01",
+    "label": "KY-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KY01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ky02",
+    "label": "KY-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KY02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ky03",
+    "label": "KY-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KY03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ky04",
+    "label": "KY-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KY04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ky05",
+    "label": "KY-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KY05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ky06",
+    "label": "KY-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-KY06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-la01",
+    "label": "LA-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-LA01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-la02",
+    "label": "LA-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-LA02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-la03",
+    "label": "LA-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-LA03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-la04",
+    "label": "LA-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-LA04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-la05",
+    "label": "LA-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-LA05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-la06",
+    "label": "LA-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-LA06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ma01",
+    "label": "MA-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MA01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ma02",
+    "label": "MA-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MA02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ma03",
+    "label": "MA-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MA03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ma04",
+    "label": "MA-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MA04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ma05",
+    "label": "MA-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MA05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ma06",
+    "label": "MA-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MA06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ma07",
+    "label": "MA-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MA07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ma08",
+    "label": "MA-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MA08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ma09",
+    "label": "MA-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MA09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-md01",
+    "label": "MD-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MD01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-md02",
+    "label": "MD-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MD02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-md03",
+    "label": "MD-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MD03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-md04",
+    "label": "MD-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MD04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-md05",
+    "label": "MD-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MD05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-md06",
+    "label": "MD-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MD06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-md07",
+    "label": "MD-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MD07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-md08",
+    "label": "MD-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MD08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-me01",
+    "label": "ME-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-ME01-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseme2",
     "label": "ME-02 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEME2",
     "ticker": "HOUSEME2-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mi01",
+    "label": "MI-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MI01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mi02",
+    "label": "MI-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MI02-26-D"
   },
   {
     "provider": "Kalshi",
@@ -465,6 +1857,22 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mi05",
+    "label": "MI-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MI05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mi06",
+    "label": "MI-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MI06-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housemi7",
     "label": "MI-07 \u00b7 U.S. House",
     "category": "House",
@@ -481,11 +1889,51 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mi09",
+    "label": "MI-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MI09-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housemi10",
     "label": "MI-10 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEMI10",
     "ticker": "HOUSEMI10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mi11",
+    "label": "MI-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MI11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mi12",
+    "label": "MI-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MI12-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mi13",
+    "label": "MI-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MI13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mn01",
+    "label": "MN-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MN01-26-D"
   },
   {
     "provider": "Kalshi",
@@ -497,11 +1945,155 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mn03",
+    "label": "MN-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MN03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mn04",
+    "label": "MN-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MN04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mn05",
+    "label": "MN-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MN05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mn06",
+    "label": "MN-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MN06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mn07",
+    "label": "MN-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MN07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mn08",
+    "label": "MN-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MN08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mo01",
+    "label": "MO-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MO01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mo02",
+    "label": "MO-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MO02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mo03",
+    "label": "MO-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MO03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mo04",
+    "label": "MO-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MO04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mo06",
+    "label": "MO-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MO06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mo07",
+    "label": "MO-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MO07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mo08",
+    "label": "MO-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MO08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ms01",
+    "label": "MS-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MS01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ms02",
+    "label": "MS-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MS02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ms03",
+    "label": "MS-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MS03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ms04",
+    "label": "MS-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MS04-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housemt1",
     "label": "MT-01 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEMT1",
     "ticker": "HOUSEMT1-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-mt02",
+    "label": "MT-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-MT02-26-D"
   },
   {
     "provider": "Kalshi",
@@ -513,11 +2105,131 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc02",
+    "label": "NC-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc03",
+    "label": "NC-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc04",
+    "label": "NC-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc05",
+    "label": "NC-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc06",
+    "label": "NC-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc07",
+    "label": "NC-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc08",
+    "label": "NC-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc09",
+    "label": "NC-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc10",
+    "label": "NC-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc12",
+    "label": "NC-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC12-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc13",
+    "label": "NC-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nc14",
+    "label": "NC-14 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NC14-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ndal",
+    "label": "ND-AL \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NDAL-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ne01",
+    "label": "NE-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NE01-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housene2",
     "label": "NE-02 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSENE2",
     "ticker": "HOUSENE2-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ne03",
+    "label": "NE-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NE03-26-D"
   },
   {
     "provider": "Kalshi",
@@ -529,11 +2241,59 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nh02",
+    "label": "NH-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NH02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nj01",
+    "label": "NJ-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NJ01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nj02",
+    "label": "NJ-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NJ02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nj03",
+    "label": "NJ-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NJ03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nj04",
+    "label": "NJ-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NJ04-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housenj5",
     "label": "NJ-05 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSENJ5",
     "ticker": "HOUSENJ5-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nj06",
+    "label": "NJ-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NJ06-26-D"
   },
   {
     "provider": "Kalshi",
@@ -545,11 +2305,51 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nj08",
+    "label": "NJ-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NJ08-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housenj9",
     "label": "NJ-09 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSENJ9",
     "ticker": "HOUSENJ9-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nj10",
+    "label": "NJ-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NJ10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nj11",
+    "label": "NJ-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NJ11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nj12",
+    "label": "NJ-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NJ12-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nm01",
+    "label": "NM-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NM01-26-D"
   },
   {
     "provider": "Kalshi",
@@ -561,11 +2361,27 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nm03",
+    "label": "NM-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NM03-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housenv1",
     "label": "NV-01 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSENV1",
     "ticker": "HOUSENV1-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-nv02",
+    "label": "NV-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NV02-26-D"
   },
   {
     "provider": "Kalshi",
@@ -585,6 +2401,22 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny01",
+    "label": "NY-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny02",
+    "label": "NY-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY02-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseny3",
     "label": "NY-03 \u00b7 U.S. House",
     "category": "House",
@@ -598,6 +2430,102 @@
     "category": "House",
     "series": "HOUSENY4",
     "ticker": "HOUSENY4-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny05",
+    "label": "NY-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny06",
+    "label": "NY-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny07",
+    "label": "NY-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny08",
+    "label": "NY-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny09",
+    "label": "NY-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny10",
+    "label": "NY-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny11",
+    "label": "NY-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny12",
+    "label": "NY-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY12-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny13",
+    "label": "NY-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny14",
+    "label": "NY-14 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY14-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny15",
+    "label": "NY-15 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY15-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny16",
+    "label": "NY-16 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY16-26-D"
   },
   {
     "provider": "Kalshi",
@@ -625,11 +2553,59 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny20",
+    "label": "NY-20 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY20-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny21",
+    "label": "NY-21 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY21-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseny22",
     "label": "NY-22 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSENY22",
     "ticker": "HOUSENY22-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny23",
+    "label": "NY-23 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY23-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny24",
+    "label": "NY-24 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY24-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny25",
+    "label": "NY-25 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY25-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ny26",
+    "label": "NY-26 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-NY26-26-D"
   },
   {
     "provider": "Kalshi",
@@ -641,11 +2617,91 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh02",
+    "label": "OH-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh03",
+    "label": "OH-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh04",
+    "label": "OH-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh05",
+    "label": "OH-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh06",
+    "label": "OH-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh07",
+    "label": "OH-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh08",
+    "label": "OH-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH08-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseoh9",
     "label": "OH-09 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEOH9",
     "ticker": "HOUSEOH9-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh10",
+    "label": "OH-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh11",
+    "label": "OH-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh12",
+    "label": "OH-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH12-26-D"
   },
   {
     "provider": "Kalshi",
@@ -657,6 +2713,94 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh14",
+    "label": "OH-14 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH14-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-oh15",
+    "label": "OH-15 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OH15-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ok01",
+    "label": "OK-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OK01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ok02",
+    "label": "OK-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OK02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ok03",
+    "label": "OK-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OK03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ok04",
+    "label": "OK-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OK04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ok05",
+    "label": "OK-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OK05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-or01",
+    "label": "OR-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OR01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-or02",
+    "label": "OR-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OR02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-or03",
+    "label": "OR-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OR03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-or04",
+    "label": "OR-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OR04-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseor5",
     "label": "OR-05 \u00b7 U.S. House",
     "category": "House",
@@ -665,11 +2809,59 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-or06",
+    "label": "OR-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-OR06-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housepa1",
     "label": "PA-01 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEPA1",
     "ticker": "HOUSEPA1-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa02",
+    "label": "PA-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa03",
+    "label": "PA-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa04",
+    "label": "PA-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa05",
+    "label": "PA-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa06",
+    "label": "PA-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA06-26-D"
   },
   {
     "provider": "Kalshi",
@@ -689,11 +2881,67 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa09",
+    "label": "PA-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA09-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housepa10",
     "label": "PA-10 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEPA10",
     "ticker": "HOUSEPA10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa11",
+    "label": "PA-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa12",
+    "label": "PA-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA12-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa13",
+    "label": "PA-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa14",
+    "label": "PA-14 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA14-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa15",
+    "label": "PA-15 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA15-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-pa16",
+    "label": "PA-16 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-PA16-26-D"
   },
   {
     "provider": "Kalshi",
@@ -705,11 +2953,363 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ri01",
+    "label": "RI-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-RI01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ri02",
+    "label": "RI-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-RI02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-sc01",
+    "label": "SC-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-SC01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-sc02",
+    "label": "SC-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-SC02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-sc03",
+    "label": "SC-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-SC03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-sc04",
+    "label": "SC-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-SC04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-sc05",
+    "label": "SC-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-SC05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-sc06",
+    "label": "SC-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-SC06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-sc07",
+    "label": "SC-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-SC07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-sdal",
+    "label": "SD-AL \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-SDAL-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tn01",
+    "label": "TN-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TN01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tn02",
+    "label": "TN-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TN02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tn03",
+    "label": "TN-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TN03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tn04",
+    "label": "TN-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TN04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tn05",
+    "label": "TN-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TN05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tn06",
+    "label": "TN-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TN06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tn07",
+    "label": "TN-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TN07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tn08",
+    "label": "TN-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TN08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tn09",
+    "label": "TN-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TN09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx01",
+    "label": "TX-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx02",
+    "label": "TX-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx03",
+    "label": "TX-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx04",
+    "label": "TX-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx05",
+    "label": "TX-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx06",
+    "label": "TX-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx07",
+    "label": "TX-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx08",
+    "label": "TX-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx10",
+    "label": "TX-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX10-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx11",
+    "label": "TX-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx12",
+    "label": "TX-12 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX12-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx13",
+    "label": "TX-13 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX13-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx14",
+    "label": "TX-14 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX14-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housetx15",
     "label": "TX-15 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSETX15",
     "ticker": "HOUSETX15-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx16",
+    "label": "TX-16 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX16-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx17",
+    "label": "TX-17 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX17-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx18",
+    "label": "TX-18 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX18-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx19",
+    "label": "TX-19 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX19-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx20",
+    "label": "TX-20 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX20-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx21",
+    "label": "TX-21 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX21-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx22",
+    "label": "TX-22 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX22-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx23",
+    "label": "TX-23 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX23-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx24",
+    "label": "TX-24 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX24-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx25",
+    "label": "TX-25 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX25-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx26",
+    "label": "TX-26 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX26-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx27",
+    "label": "TX-27 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX27-26-D"
   },
   {
     "provider": "Kalshi",
@@ -721,11 +3321,75 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx29",
+    "label": "TX-29 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX29-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx30",
+    "label": "TX-30 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX30-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx31",
+    "label": "TX-31 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX31-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx33",
+    "label": "TX-33 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX33-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housetx34",
     "label": "TX-34 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSETX34",
     "ticker": "HOUSETX34-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx36",
+    "label": "TX-36 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX36-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx37",
+    "label": "TX-37 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX37-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-tx38",
+    "label": "TX-38 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-TX38-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-ut04",
+    "label": "UT-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-UT04-26-D"
   },
   {
     "provider": "Kalshi",
@@ -745,11 +3409,91 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-va03",
+    "label": "VA-03 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-VA03-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-va04",
+    "label": "VA-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-VA04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-va05",
+    "label": "VA-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-VA05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-va06",
+    "label": "VA-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-VA06-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-houseva7",
     "label": "VA-07 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEVA7",
     "ticker": "HOUSEVA7-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-va08",
+    "label": "VA-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-VA08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-va09",
+    "label": "VA-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-VA09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-va11",
+    "label": "VA-11 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-VA11-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-vtal",
+    "label": "VT-AL \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-VTAL-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wa01",
+    "label": "WA-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WA01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wa02",
+    "label": "WA-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WA02-26-D"
   },
   {
     "provider": "Kalshi",
@@ -761,6 +3505,54 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wa04",
+    "label": "WA-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WA04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wa05",
+    "label": "WA-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WA05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wa06",
+    "label": "WA-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WA06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wa07",
+    "label": "WA-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WA07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wa09",
+    "label": "WA-09 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WA09-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wa10",
+    "label": "WA-10 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WA10-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housewi1",
     "label": "WI-01 \u00b7 U.S. House",
     "category": "House",
@@ -769,11 +3561,83 @@
   },
   {
     "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wi02",
+    "label": "WI-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WI02-26-D"
+  },
+  {
+    "provider": "Kalshi",
     "event_id": "2026-housewi3",
     "label": "WI-03 \u00b7 U.S. House",
     "category": "House",
     "series": "HOUSEWI3",
     "ticker": "HOUSEWI3-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wi04",
+    "label": "WI-04 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WI04-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wi05",
+    "label": "WI-05 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WI05-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wi06",
+    "label": "WI-06 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WI06-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wi07",
+    "label": "WI-07 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WI07-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wi08",
+    "label": "WI-08 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WI08-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wv01",
+    "label": "WV-01 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WV01-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wv02",
+    "label": "WV-02 \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WV02-26-D"
+  },
+  {
+    "provider": "Kalshi",
+    "event_id": "2026-kxhousErace-wyal",
+    "label": "WY-AL \u00b7 U.S. House",
+    "category": "House",
+    "series": "KXHOUSERACE",
+    "ticker": "KXHOUSERACE-WYAL-26-D"
   },
   {
     "provider": "Kalshi",
