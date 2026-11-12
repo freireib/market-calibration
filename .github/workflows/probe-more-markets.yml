@@ -1,0 +1,60 @@
+name: Discover additional 2026 election coverage
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-more-markets.yml'
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check archived Polymarket primary settlements
+        run: |
+          python - <<'PY'
+          import json,sys
+          sys.path.insert(0,'scripts')
+          from collect_polymarket import api_json,GAMMA,final_yes
+          slugs=[
+          'maine-democratic-senate-primary-winner',
+          'wisconsin-governor-democratic-primary-winner',
+          'new-hampshire-democratic-senate-primary-winner',
+          'illinois-democratic-senate-primary-winner',
+          'texas-democratic-senate-primary-winner',
+          'texas-republican-senate-primary-winner',
+          'massachusetts-democratic-senate-primary-winner',
+          'minnesota-democratic-senate-primary-winner',
+          'delaware-democratic-senate-primary-winner',
+          ]
+          for slug in slugs:
+            try:
+              events=api_json(GAMMA,'/events',{'slug':slug,'limit':2})
+              markets=events[0].get('markets',[]) if len(events)==1 else []
+              outcomes=[final_yes(m) for m in markets]
+              print('POLY_PROBE',slug,'EVENTS',len(events),'TITLE',events[0].get('title') if events else None,
+                 'START',events[0].get('startDate') if events else None,'CLOSED',events[0].get('closed') if events else None,
+                 'N',len(markets),'WINNERS',sum(x==1 for x in outcomes),'UNKNOWN',sum(x is None for x in outcomes),
+                 'BAD_STATUS',sum(m.get('umaResolutionStatus')!='resolved' for m in markets),
+                 'WINNER_QUESTION',[m.get('question') for m,yes in zip(markets,outcomes) if yes==1][:1],
+                 flush=True)
+            except Exception as e:print('POLY_PROBE_ERROR',slug,repr(e)[:220],flush=True)
+          PY
+      - name: Check Kalshi alternative House series
+        run: |
+          python - <<'PY'
+          import sys,json
+          sys.path.insert(0,'scripts')
+          from collect_kalshi import api_get
+          for series in ['KXHOUSERACE','KXHOUSEAKAL','HOUSEAKAL','HOUSEAK0','KXHOUSEUT02','HOUSEUT2']:
+            try:
+              for path,params in [('/markets',{'series_ticker':series,'limit':5})]:
+                d=api_get(path,params)
+                markets=d.get('markets',[])
+                print('KALSHI_PROBE',series,'N',len(markets),'CURSOR',bool(d.get('cursor')),
+                  'SAMPLE',json.dumps([{k:m.get(k) for k in ('ticker','event_ticker','title','yes_sub_title','status','result')} for m in markets[:3]])[:950],flush=True)
+            except Exception as e:print('KALSHI_PROBE_ERROR',series,repr(e)[:200],flush=True)
+          PY
