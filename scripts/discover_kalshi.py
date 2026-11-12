@@ -10,6 +10,7 @@ All entries must be returned by Kalshi's GET /events/{ticker} endpoint.
 """
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -50,6 +51,65 @@ def candidates(scope):
         suffix = "AL" if HOUSE_SEATS[state] == 1 else f"{n:02}"
         yield f"HOUSE{state}{n}",f"{state}-{suffix} · U.S. House","House"
 
+def add_new_house_series(catalog):
+    """Fill uncovered districts from exchange-confirmed KXHOUSERACE 2026 D contracts.
+
+    The legacy HOUSE{state}{district} series takes precedence in any district
+    where both exist, preventing a race from entering the study twice.
+    """
+    existing = {item["label"].split(" · ")[0]
+                for item in catalog.values() if item["category"] == "House"}
+    pattern = re.compile(r"^KXHOUSERACE-([A-Z]{2})(AL|[0-9]{2})-26-D$")
+    added = 0
+    for endpoint in ("/markets", "/historical/markets"):
+        cursor = None
+        pages = 0
+        while True:
+            params = {"series_ticker": "KXHOUSERACE", "limit": 200}
+            if cursor:
+                params["cursor"] = cursor
+            response = api_get(endpoint, params)
+            markets = response.get("markets") or []
+            for market in markets:
+                ticker = market.get("ticker", "")
+                match = pattern.fullmatch(ticker)
+                if not match:
+                    continue
+                state, district = match.groups()
+                seats = HOUSE_SEATS.get(state)
+                if seats is None:
+                    continue
+                if seats == 1 and district != "AL":
+                    continue
+                if seats > 1 and (not district.isdecimal() or
+                                  int(district) < 1 or int(district) > seats):
+                    continue
+                district_key = f"{state}-{district}"
+                if district_key in existing:
+                    continue
+                title = (market.get("title") or "").lower()
+                if "democratic" not in title or "house" not in title:
+                    raise RuntimeError("Unverified KXHOUSERACE party proposition: "+ticker)
+                catalog["House:"+district_key] = {
+                    "provider": "Kalshi",
+                    "event_id": "2026-kxhousErace-"+state.lower()+district.lower(),
+                    "label": district_key+" · U.S. House",
+                    "category": "House",
+                    "series": "KXHOUSERACE",
+                    "ticker": ticker
+                }
+                existing.add(district_key)
+                added += 1
+            pages += 1
+            cursor = response.get("cursor")
+            if not cursor:
+                break
+            if pages >= 30:
+                raise RuntimeError("KXHOUSERACE market pagination too large to audit")
+        print("KXHOUSERACE_DISCOVERY",endpoint,"pages",pages,"total added",added,flush=True)
+    return added
+
+
 def discover(scope):
     market_catalog = {}
     missing,checked=0,0
@@ -79,6 +139,9 @@ def discover(scope):
         if checked%30==0:
             print("Discovery progress:",checked,"checked,",len(market_catalog),"D contracts",flush=True)
         time.sleep(0.03)
+    if scope == "all":
+        increment = add_new_house_series(market_catalog)
+        print("NEW_HOUSE_DISTRICTS",increment,flush=True)
     catalog=sorted(market_catalog.values(),key=lambda x:(x["category"],x["label"]))
     if not catalog:raise RuntimeError("Discovery returned zero confirmed contracts")
     output=DATA/"markets.json"
