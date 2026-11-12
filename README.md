@@ -46,8 +46,10 @@ the observations used in these summaries. Different horizons can have
 different sample composition; for direct time comparisons turn on Matched cohort.
 
 The provider selector keeps **Kalshi and Polymarket strictly separate**.
-The Polymarket pilot includes two overlapping resolved 2026 primary contests:
-Florida Republican governor and Michigan Democratic Senate nomination.
+The Polymarket study now includes **11 fully resolved 2026 primary contests**
+(266 listed candidate contracts and 322 usable pre-election forecast observations),
+including nine newly added nomination markets. This is still a curated sample,
+not a random sample or an independent set of 322 events.
 Polymarket's historical YES-token CLOB prices are *not* the same statistic as
 Kalshi's historical YES bid/ask midpoints. The Polymarket pilot does not contain
 comparable seven-day historical contract volumes, so those filters are disabled.
