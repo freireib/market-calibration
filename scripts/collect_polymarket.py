@@ -116,7 +116,7 @@ def collect():
         "study_label":"2026 Primaries · Polymarket pilot",
         "generated_at":datetime.now(timezone.utc).isoformat(),
         "source":"Polymarket Gamma event outcomes and historical CLOB YES prices",
-        "sample":"Two curated, fully resolved nomination contests; NEVER pooled with Kalshi",
+        "sample":str(len(catalog["events"]))+" curated, fully resolved 2026 primary nomination contests; separate from Kalshi",
         "statistics":stats,"records":rows}
     dest=DATA/"polymarket_primaries_2026_pilot.json"
     temporary=dest.with_suffix(".tmp")
