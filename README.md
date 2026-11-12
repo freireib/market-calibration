@@ -7,14 +7,15 @@ The initial studies cover the **2026 US general election** and **2026 primary no
 [CalibrationLab](https://github.com/freireib/calibration-lab): plain HTML, CSS and
 JavaScript, mobile friendly, transparent statistics and portable data.
 
-## Status — v0.1 (data updated November 3, 2026)
+## Status — expanded data (November 12, 2026)
 
-- ✅ Static web dashboard: reliability curves, Brier scores, matched-cohort comparison, filters and CSV export.
-- ✅ Kalshi's live API tested on a GitHub runner against real 2026 market histories and finalizations.
-- ✅ First comprehensive contract discovery and data run: **129 markets** (64 House, 32 Senate, 33 governor); **381** usable historical quotes, **195** scored observations. Results will change as more races finalize.
-- ✅ Data collection available under **Actions → Collect 2026 election market data → Run workflow**. Select pilot or all. The workflow writes the validated dataset back to `main`.
-- ⚠️ The current dataset is *not* a representative sample of every 2026 race. Kalshi does not offer a market for every race; the current discovery pass also misses some at-large districts. Missing forecasts are excluded.
-- ⏳ Integration of independent AP calls and other market providers remains future work.
+- ✅ Static browser dashboard with reliability diagrams, selectable KDEs, Brier scores, entropy/sharpness summaries, historical volume sensitivity, matched cohort selection, and CSV export.
+- ✅ **Kalshi 2026 general election:** 487 verified Democratic-party winner markets: **422 House**, 32 Senate, and 33 gubernatorial races. Their three historical horizons yield **1,402 usable forecasts**, with **1,369** already scorable against finalized exchange outcomes. The new `KXHOUSERACE` series supplies 358 additional House districts without double-counting legacy district contracts.
+- ✅ **Kalshi 2026 primaries:** 30 curated resolved nomination contests, 245 listed candidate contracts and 659 scored historical forecasts.
+- ✅ **Polymarket 2026 primaries:** 11 curated resolved nomination contests, 266 listed candidate contracts and 322 scored historical CLOB prices, kept strictly separate from Kalshi.
+- ✅ Automated validation in GitHub Actions and a **Refresh all market data** workflow. Use the repository Actions tab to run collections; the app's Refresh data button only reloads datasets already published.
+- ⚠️ Coverage is **not** a representative sample of all events. The new House districts are mostly high-confidence races; the increased sample size does not imply a comparable increase in forecasts near 50%. Of 435 House districts, 422 currently have one verified Democratic-win market in the study catalog.
+- ⚠️ Only exchange-resolved outcomes are scored; independent election-result verification remains future work. Multi-candidate primaries are pooled at the contract level **within their own provider**, not treated as independent elections. Polymarket and Kalshi are never pooled together by default.
 
 ## 2026 primary study
 
@@ -26,7 +27,7 @@ Run `python3 scripts/collect_primaries.py`, or use **Actions → Collect 2026 pr
 
 ## Forecast sharpness and additional prediction markets
 
-The v0.3 interface includes three new views on the filtered observations:
+The current interface includes three new views on the filtered observations:
 
 - **Forecast probability distributions:** overlapping Gaussian kernel-density estimates
   (KDEs), with YES probability on the x-axis and density on the y-axis. One
