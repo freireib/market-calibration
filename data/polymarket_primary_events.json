@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "notes": "Two verified shared 2026 primary contests. Do not pool candidate contracts with Kalshi or treat markets as the same contract without auditing resolution rules and candidate options.",
+  "notes": "Eleven empirically verified 2026 primary nomination contests. All new slugs passed Polymarket Gamma checks for closed events, exactly one YES settlement, all markets resolved. Do not pool candidate contracts with Kalshi; their contract sets and price measures differ.",
   "events": [
     {
       "slug": "republican-nominee-for-florida-governor",
@@ -15,6 +15,78 @@
       "label": "Michigan · Democratic Senate",
       "category": "Senate",
       "contest_id": "2026-MI-SEN-D-PRIMARY"
+    },
+    {
+      "slug": "maine-democratic-senate-primary-winner",
+      "primary_date": "2026-06-09",
+      "label": "Maine · Democratic Senate",
+      "category": "Senate",
+      "contest_id": "2026-ME-SEN-D-PRIMARY",
+      "source_url": "https://polymarket.com/event/maine-democratic-senate-primary-winner"
+    },
+    {
+      "slug": "wisconsin-governor-democratic-primary-winner",
+      "primary_date": "2026-08-11",
+      "label": "Wisconsin · Democratic governor",
+      "category": "Governor",
+      "contest_id": "2026-WI-GOV-D-PRIMARY",
+      "source_url": "https://polymarket.com/event/wisconsin-governor-democratic-primary-winner"
+    },
+    {
+      "slug": "new-hampshire-democratic-senate-primary-winner",
+      "primary_date": "2026-09-08",
+      "label": "New Hampshire · Democratic Senate",
+      "category": "Senate",
+      "contest_id": "2026-NH-SEN-D-PRIMARY",
+      "source_url": "https://polymarket.com/event/new-hampshire-democratic-senate-primary-winner"
+    },
+    {
+      "slug": "illinois-democratic-senate-primary-winner",
+      "primary_date": "2026-03-17",
+      "label": "Illinois · Democratic Senate",
+      "category": "Senate",
+      "contest_id": "2026-IL-SEN-D-PRIMARY",
+      "source_url": "https://polymarket.com/event/illinois-democratic-senate-primary-winner"
+    },
+    {
+      "slug": "texas-democratic-senate-primary-winner",
+      "primary_date": "2026-03-03",
+      "label": "Texas · Democratic Senate",
+      "category": "Senate",
+      "contest_id": "2026-TX-SEN-D-PRIMARY",
+      "source_url": "https://polymarket.com/event/texas-democratic-senate-primary-winner"
+    },
+    {
+      "slug": "texas-republican-senate-primary-winner",
+      "primary_date": "2026-05-26",
+      "label": "Texas · Republican Senate runoff",
+      "category": "Senate",
+      "contest_id": "2026-TX-SEN-R-PRIMARY",
+      "source_url": "https://polymarket.com/event/texas-republican-senate-primary-winner"
+    },
+    {
+      "slug": "massachusetts-democratic-senate-primary-winner",
+      "primary_date": "2026-09-01",
+      "label": "Massachusetts · Democratic Senate",
+      "category": "Senate",
+      "contest_id": "2026-MA-SEN-D-PRIMARY",
+      "source_url": "https://polymarket.com/event/massachusetts-democratic-senate-primary-winner"
+    },
+    {
+      "slug": "minnesota-democratic-senate-primary-winner",
+      "primary_date": "2026-08-11",
+      "label": "Minnesota · Democratic Senate",
+      "category": "Senate",
+      "contest_id": "2026-MN-SEN-D-PRIMARY",
+      "source_url": "https://polymarket.com/event/minnesota-democratic-senate-primary-winner"
+    },
+    {
+      "slug": "delaware-democratic-senate-primary-winner",
+      "primary_date": "2026-09-15",
+      "label": "Delaware · Democratic Senate",
+      "category": "Senate",
+      "contest_id": "2026-DE-SEN-D-PRIMARY",
+      "source_url": "https://polymarket.com/event/delaware-democratic-senate-primary-winner"
     }
   ]
 }
